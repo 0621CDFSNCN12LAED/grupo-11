@@ -16,7 +16,7 @@ Temática del sitio:
 
 -La web conecta usuarios que buscan realizar una reparación en su inmueble con diferentes profesionales que ofrecen sus servicios en la misma. La web linkea usuarios y trabajadores a partir de su cercanía geográfica, especialización en la materia solicitada y un sistema de comentarios y calificaciones que rankea tanto a usuarios como para trabajadores. Los mismos trabajos se dividen según su urgencia, como “Puede Esperar”, “Urgente”, etc. Los profesionales deben loguearse y ser verificados para poder ofrecer sus servicios. El ingreso de los usuarios es libre, pudiendo acceder con una dirección de correo electrónico y una contraseña.
 
-Beve descripción de nuestro equipo:
+Breve descripción de nuestro equipo:
 
 -Omar Cremer: De Buenos Aires San Fernando. Trabajo en Wenance Fintech en el área de ATC. (Préstamos online, trabajo medio tiempo). Entusiasta y emprendedor. Siempre predispuesto para colaborar y aprender. 
  
