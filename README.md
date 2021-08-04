@@ -3,13 +3,13 @@
 Integrantes:
 
 - Omar Cremer
-- Nicolás Casella 
+- Nicolas Casella 
 - Mario Fernando Leiss
 - Mosshe Elias Lazo Quiñones
 
 
 
-Nombre del sitio: Otro Lo Arregla
+Nombre del sitio: Otro Lo Arregla (OLA)
 
 
 Temática del sitio:
@@ -19,4 +19,15 @@ Temática del sitio:
 Público objetivo: 
 
 -Personas mayores de edad que necesiten hacer una reparación y personas ofrezcan sus servicios y estén disponibles para poder realizar dichos arreglo, con referencias y datos fieles de que estén capacitados. ej: gasista matriculado.
+
+Listado de Sitios de referencia:
+
+Más allá de la busqueda de referencias, consideramos que la idea a representar es innovadora y práctica, porque lo que hemos hondado en la vista de funcionalidad, simpleza y practicidad estética de los sitios.
+
+-https://webcapp.com/ : La consideramos por la estética que presenta y la interfaz original y llamativa.
+-https://www.paginasamarillas.com.ar/ : Su interfaz simple nos ayudó a pensar sobre implementarla en alguna sección.
+-https://www.builddirect.com/ : También la ubicamos por su interfaz y los productos que ofrece. 
+-https://buildnext.in/ : Buena distribución de sus elementos, el uso de la multimedia y la funcionalidad de algunos de sus íconos.
+-https://www.mcc-servicios.com/ :Es la que más se adecúa a la idea que estamos desarrollando, la estructura de su interfaz nos pareció interesante y bastante intuitiva.
+
 
