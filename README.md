@@ -1,5 +1,7 @@
 # grupo-11
 
+SPRINT 1:
+
 Integrantes:
 
 - Omar Cremer
@@ -45,3 +47,6 @@ Más allá de la busqueda de referencias, consideramos que la idea a representar
 -https://www.mcc-servicios.com/ :Es la que más se adecúa a la idea que estamos desarrollando, la estructura de su interfaz nos pareció interesante y bastante intuitiva.
 
 
+SPRINT 2:
+
+- Enlace a tablero de Trello: https://trello.com/invite/b/dw2BDmPk/8f79834a838687aefa812bf1997674f9/dh-grupo-11-proyecto-ola
