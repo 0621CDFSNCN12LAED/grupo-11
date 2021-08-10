@@ -1,0 +1,1 @@
+ La retrospectiva en estrella de mar se encuentra en https://padlet.com/mariomilito14/9wlw2gclrjedrzob
