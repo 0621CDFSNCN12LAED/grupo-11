@@ -1,0 +1,22 @@
+{
+  "name": "proyecto_ola",
+  "version": "1.0.0",
+  "description": "proyecto_integrador_grupo_11",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0621CDFSNCN12LAED/grupo-11.git"
+  },
+  "author": "Omar Cremer, Nicolas Casella, Mosshe Elias Lazo Quiñones, Mario Leiss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0621CDFSNCN12LAED/grupo-11/issues"
+  },
+  "homepage": "https://github.com/0621CDFSNCN12LAED/grupo-11#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
