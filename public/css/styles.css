@@ -1,3 +1,10 @@
-header {
-    background-color: orange;
+*{
+    box-sizing: border-box;
 }
+
+header { background-color: #F7931E }
+
+img{
+    width: 100%;
+}
+
