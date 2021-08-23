@@ -1,35 +1,83 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Century Gothic Regular";
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Franklin Gothic Heavy';
+.titulares {
+  font-family: "Franklin Gothic Heavy";
 }
 
-p {
-    font-family: "Century Gothic Regular";
+#enlaces {
 }
 
-header { background-color: #F7931E }
-
-main { background-color: #B3B3B3 }
-
-footer { background-color: #F7931E }
-
-img{
-    width: 100%;
+#enlaces a {
+  text-decoration: 0;
 }
 
-.centrado {
-    text-align: center;
+#enlaces ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* 
+
+header {
+  background-color: #f7931e;
+}
+
+main {
+  background-color: #b3b3b3;
+}
+
+footer {
+  background-color: #f7931e;
+}
+
+*/
+
+.banner {
+  max-height: 600px;
+}
+
+.descripcion {
+  padding: 10% 5%;
+}
+
+@media (min-width: 480px) {
+}
+
+@media (min-width: 769px) {
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contenedor img {
+    width: 50%;
+  }
+
+  .descripcion {
+    width: 50%;
+    align-self: center;
+    padding: 0 5%;
+  }
+
+  .order-1 {
+    order: -1;
+  }
+
+  #enlaces {
+    justify-content: center;
+    padding: 15px 0;
+  }
+
+  #enlaces li {
+    margin: 0 30px;
+  }
 }

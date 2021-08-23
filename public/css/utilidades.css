@@ -1,0 +1,31 @@
+.rm-margin {
+  margin: 0;
+}
+
+.margin-t-b {
+  margin: 20px 0px;
+}
+
+.weight-0 {
+  font-weight: 100;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.centrado {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.block {
+  display: block;
+}
