@@ -13,7 +13,16 @@ body {
   font-family: "Franklin Gothic Heavy";
 }
 
-#enlaces {
+#main-nav a {
+  text-decoration: none;
+}
+
+#main-nav ul {
+  list-style-type: none;
+}
+
+#titular {
+  position: absolute;
 }
 
 #enlaces a {
@@ -25,21 +34,23 @@ body {
   padding: 0;
 }
 
-/* 
-
-header {
-  background-color: #f7931e;
+.burger-menu {
+  text-decoration: none;
 }
 
-main {
-  background-color: #b3b3b3;
+.header-barra {
+  background-color: orange;
+  position: fixed;
+  top: 0;
+  justify-content: space-between;
 }
 
-footer {
-  background-color: #f7931e;
+.header-dos {
+  align-items: center;
+  justify-content: space-around;
+  width: 20%;
+  font-size: 20px;
 }
-
-*/
 
 .banner {
   max-height: 600px;
@@ -50,12 +61,24 @@ footer {
 }
 
 @media (min-width: 480px) {
+  #enlaces ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 0;
+  }
+  #enlaces li {
+    margin: 0 10px;
+  }
+
+  .header-dos {
+    font-size: 26px;
+  }
 }
 
 @media (min-width: 769px) {
-  .flex {
-    display: flex;
-    flex-wrap: wrap;
+  .contenedor {
+    margin-bottom: 100px;
   }
 
   .contenedor img {
@@ -71,13 +94,11 @@ footer {
   .order-1 {
     order: -1;
   }
-
-  #enlaces {
-    justify-content: center;
-    padding: 15px 0;
-  }
-
   #enlaces li {
-    margin: 0 30px;
+    margin: 0 40px;
   }
+}
+
+.espacio-vacio {
+  height: 34px;
 }

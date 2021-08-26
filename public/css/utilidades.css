@@ -2,10 +2,6 @@
   margin: 0;
 }
 
-.margin-t-b {
-  margin: 20px 0px;
-}
-
 .weight-0 {
   font-weight: 100;
 }
@@ -28,4 +24,9 @@
 
 .block {
   display: block;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
 }
