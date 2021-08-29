@@ -1,0 +1,12 @@
+/* Detalle del servicio */
+
+#enlaces ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+#enlaces li {
+  margin: 0 10px;
+}
