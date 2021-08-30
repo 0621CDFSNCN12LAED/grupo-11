@@ -10,6 +10,8 @@ body {
   line-height: 1.8;
 }
 
+/* Header */
+
 .header-barra {
   background-color: orange;
   position: fixed;
@@ -17,8 +19,6 @@ body {
   justify-content: space-between;
   height: 60px;
 }
-
-/* Header */
 
 .header-dos {
   align-items: center;
@@ -59,9 +59,7 @@ body {
   padding: 10% 5%;
 }
 
-.espacio-vacio {
-  height: 34px;
-}
+/* Footer */
 
 .footer-cajas a {
   text-decoration: none;
@@ -77,4 +75,8 @@ que es necesario poner otro */
 
 header img {
   opacity: 0;
+}
+
+.espacio-vacio {
+  height: 60px;
 }

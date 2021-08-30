@@ -1,3 +1,29 @@
+/* Header */
+
+#main-nav {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+#main-nav ul {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 15px;
+}
+
+#main-nav #primer-ul {
+  margin: auto;
+}
+
+#main-nav li {
+  margin: 0 10px;
+}
+
+.header-dos {
+  display: none;
+}
+
 /* Detalle del servicio */
 
 .contenedor {
@@ -24,38 +50,19 @@
 
 /* Footer */
 
-.footer-cajas {
-  width: 20%;
-}
-
 #footer-main {
   display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  background-color: orange;
 }
 
-/* Header */
-
-#main-nav {
+#primer-footer {
   display: flex;
-  width: 80%;
-  justify-content: space-between;
 }
 
-#main-nav ul {
-  display: flex;
-  justify-content: space-between;
+#primer-footer .footer-cajas {
   margin: auto 15px;
-}
-
-#main-nav #primer-ul {
-  margin: auto;
-}
-
-#main-nav li {
-  margin: 0 10px;
-}
-
-.header-dos {
-  display: none;
 }
 
 /* Esto es el carrito pero luego se puede
