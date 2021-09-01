@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/laptop.css" media="(min-width:768px)" />
     <!--  <link rel="stylesheet" href="/css/desktop.css" media="(min-width:1280px)" /> -->
 
-    <title>OLA</title>
+    <title>OLA - Registro</title>
   </head>
   <body>
         <!-- Header -->
@@ -37,7 +37,8 @@
           <ul id="primer-ul">
             <li><a href="/">Home</a></li>
             <li><a href="/detailService">Servicios</a></li>
-            <li><a href="register">Asociate</a></li>
+            <li><a href="/register">Asociate</a></li>
+            
             <li><a href="#">Contacto</a></li>
           </ul>
           <ul class="segundo-ul">
@@ -53,105 +54,119 @@
       </div>
     </header>
         <!-- Main -->
-    <main>
-      <img
+        <img
         class="w-100 block banner"
         src="https://fondosmil.com/fondo/57266.jpg"
         alt=""
       />
-      <div id="enlaces">
-        <ul class="centrado">
-          <li><a href="#">Preguntas frecuentes <//*a></li>
-          <li><a href="#">Preguntas frecuentes </a></li>
-          <li><a href="#">Preguntas frecuentes </a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="contenedor flex">
-          <div class="descripcion">
-            <h1 class="rm-margin weight-0">Que hacemos</h1>
-            <p>
-              Nuestra mision es facilitar la resolucion de problemas en el area
-              de construcción donde contamos con profesionales capaces de ayudar
-              ¡a la vuelta de la esquina!.
-            </p>
-            <p>
-              Nuestra mision es facilitar la resolucion de problemas en el area
-              de construcción donde contamos con profesionales capaces de ayudar
-              ¡a la vuelta de la esquina!.
-            </p>
-          </div>
-          <img
-            class="w-100 block"
-            src="https://www.beresrichard.hu/images/kapcsolt/minimal%20home%20staging.jpg"
-            alt=""
+    <main class="padding-16">
+     
+      <h1>Registro</h1>
+      <form>
+          <div class="form-input">
+          <label class="main-label" 
+          for="name">Nombre y Apellido</label>
+          <input 
+          id="name" 
+          type="text" 
+          name ="name" 
+          placeholder="Nombre y Apellido"
           />
-        </div>
-
-        <div class="contenedor flex">
-          <div class="descripcion">
-            <h1 class="rm-margin weight-0">Recomendaciones</h1>
-            <p>
-              Recomendamos que sea minusiono a la hora de buscar un profesional,
-              contamos con un gran catalogo y distintos filtros para encontrar
-              la mejor opcion al problema.
-            </p>
-            <p>
-              Recomendamos que sea minusiono a la hora de buscar un profesional,
-              contamos con un gran catalogo y distintos filtros para encontrar
-              la mejor opcion al problema.
-            </p>
           </div>
-          <img
-            class="w-100 block order-1"
-            src="https://www.beresrichard.hu/images/kapcsolt/minimal%20home%20staging.jpg"
-            alt=""
-          />
-        </div>
 
-        <div class="contenedor flex">
-          <div class="descripcion">
-            <h1 class="rm-margin weight-0">Categorias</h1>
-            <p>
-              Contamos con una variedad de profesionales y distintas areas de la
-              construcción para cumplir con los requirimientos de nuestros
-              clientes. problemas
-            </p>
-            <p>
-              Contamos con una variedad de profesionales y distintas areas de la
-              construcción para cumplir con los requirimientos de nuestros
-              clientes. problemas
-            </p>
+          <div class="form-input">
+            <label class="main-label" for="username">Nombre de usuario</label>
+            <input id="username" type="text" name ="username" placeholder="Nombre de usuario"/>
           </div>
-          <img
-            class="w-100 block"
-            src="https://www.beresrichard.hu/images/kapcsolt/minimal%20home%20staging.jpg"
-            alt=""
-          />
-        </div>
 
-        <div class="contenedor flex">
-          <div class="descripcion">
-            <h1 class="rm-margin weight-0">Certificados</h1>
-            <p>
-              Nuestro servicio nos facilita encontrar las mejores opciones
-              contando asi con certificados de cada profesional para verificar
-              su rendimiento.
-            </p>
-            <p>
-              Nuestro servicio nos facilita encontrar las mejores opciones
-              contando asi con certificados de cada profesional para verificar
-              su rendimiento.
-            </p>
+          <div class="form-input">
+            <label class="main-label" for="birthday">Fecha de nacimiento</label>
+            <input id="birthday" type="date" name ="birthday" />
+          </div>    
+
+          <div class="form-input">
+            <label class="main-label" for="address">Domicilio</label>
+            <input id="address" type="text" name ="address" placeholder="Domicilio"/>
           </div>
-          <img
-            class="w-100 block order-1"
-            src="https://www.beresrichard.hu/images/kapcsolt/minimal%20home%20staging.jpg"
-            alt=""
+          <label class="main-label">Perfil de usuario</label>
+          <div class="form-input">
+            <input type="radio" name="user-profile" id="user-profile-seller" value="seller"/>
+            <label for="user-profile-seller">Vendedor</label>
+            <input type="radio" name="user-profile" id="user-profile-buyer" value="buyer"/>
+            <label>Comprador</label>
+          </div>
+          <div class="form-input">
+            <label class="main-label">Interese</label>
+            <div>
+              <input
+            type="checkbox"
+            name="Pintor"
+            id="Pintor"
+            value="Pintor"
+            />
+            <label for="Pintor">Pintor</label>
+            </div>
+            <div>
+              <input
+            type="checkbox"
+            name="Carpintero"
+            id="Carpintero"
+            value="Carpintero"
+            />
+            <label for="Pintor">Carpintero</label>
+            </div>
+          </div>
+          <div>
+            <input
+          type="checkbox"
+          name="Electricista"
+          id="Electricista"
+          value="Electricista"
           />
+          <label for="Pintor">Electricista</label>
+          </div>
+          <div>
+            <input
+          type="checkbox"
+          name="Jardineria"
+          id="Jardineria"
+          value="Jardineria"
+          />
+          <label for="Jardineria">Jardineria</label>
+          </div>
+          <div>
+            <input
+          type="checkbox"
+          name="Gasista"
+          id="Gasista"
+          value="Gasista"
+          />
+          <label for="Jardineria">Gasista</label>
+          </div>
         </div>
-      </div>
+        <div class="form-input">
+          <label class="main-label" for="profile-pic">Foto de Perfil</label>
+          <input id="profile-pic" type="file" name ="profile-pic" placeholder="profile-pic"
+          accept="image/png,image/jpg"/>
+        </div>
+          <div class="form-input">
+            <label class="main-label" for="password">Contraseña</label>
+            <input id="password" type="text" name ="password" placeholder="contraseña"/>
+          </div>
+          <div class="form-input">
+            <label class="main-label" for="Repassword">Repetir contraseña</label>
+            <input id="password" type="text" name ="password" placeholder="Repetir contraseña"/>
+          </div>
+
+          </div>
+
+          <button type="submit">Enviar</button>
+          <button type="reset">Resetear</button>
+
+        
+
+      </form>
+     
     </main>
 
     <!-- Footer -->
