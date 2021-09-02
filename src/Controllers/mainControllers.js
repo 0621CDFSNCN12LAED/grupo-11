@@ -3,7 +3,7 @@ const mainControllers = {
         res.render('home')
       },
     service: (req, res) => {
-        res.render('detailService')
+        res.render('service')
       },
     login: (req, res) => {
         res.render('login')

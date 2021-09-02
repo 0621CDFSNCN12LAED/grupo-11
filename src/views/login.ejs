@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- Head -->
+   <%- include("./partials/head") %>
+   <body>
+         <!-- Header -->
+     <%- include("./partials/header") %>
+         <!-- Main -->
+        <img
+        class="w-100 block banner"
+        src="https://fondosmil.com/fondo/57266.jpg"
+        alt=""
+      />
+    <main class="padding-16">
+     
+      <h1>Inicio</h1>
+      <form>
+          
+
+          <div class="form-input">
+            <label class="main-label" for="username">Nombre de usuario</label>
+            <input id="username" type="text" name ="username" placeholder="Nombre de usuario"/>
+          </div>
+
+          
+          
+          <div class="form-input">
+            <label class="main-label" for="password">Contraseña</label>
+            <input id="password" type="text" name ="password" placeholder="contraseña"/>
+          </div>
+          
+
+          </div>
+
+          <button type="submit">Enviar</button>
+          <button type="reset">Resetear</button>
+
+        
+
+      </form>
+     
+    </main>
+
+   <!-- footer -->
+   <%- include("./partials/footer") %>
+  </body>
+</html>

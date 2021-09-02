@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const mainControllers = require ("../controllers/mainController");
+const mainControllers = require ("../Controllers/mainControllers");
 // ver que pasa con routerssss con ss
 
 

@@ -1,58 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-
-    <link rel="stylesheet" href="/css/utilidades.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/tablet.css" media="(min-width:480px)" />
-    <link rel="stylesheet" href="/css/laptop.css" media="(min-width:768px)" />
-    <!--  <link rel="stylesheet" href="/css/desktop.css" media="(min-width:1280px)" /> -->
-
-    <title>OLA - Registro</title>
-  </head>
+  <!-- Head -->
+  <%- include("./partials/head") %>
   <body>
         <!-- Header -->
-    <header>
-      <div class="header-barra flex w-100">
-        <img
-          src="/img/Logo OLA_Mesa de trabajo 1.png"
-          width="10%"
-          height="60px"
-        />
-        <div class="header-dos flex">
-          <i class="fas fa-shopping-cart burger-menu"></i>
-          <i class="fas fa-bars burger-menu"></i>
-        </div>
-
-        <nav id="main-nav" class="hide">
-          <ul id="primer-ul">
-            <li><a href="/">Home</a></li>
-            <li><a href="/detailService">Servicios</a></li>
-            <li><a href="/register">Asociate</a></li>
-            
-            <li><a href="#">Contacto</a></li>
-          </ul>
-          <ul class="segundo-ul">
-            <li><a href="login">Inicio</a></li>
-          </ul>
-        </nav>
-        <div class="header-tres hide">
-          <i class="fas fa-shopping-cart burger-menu"></i>
-        </div>
-      </div>
-      <div class="espacio-vacio">
-        <span></span>
-      </div>
-    </header>
+    <%- include("./partials/header") %>
         <!-- Main -->
         <img
         class="w-100 block banner"
@@ -168,52 +120,7 @@
       </form>
      
     </main>
-
-    <!-- Footer -->
-    <footer>
-      <div id="footer-main">
-
-        <div id="primer-footer">
-        <div class="footer-cajas padding-16">
-          <h2 class="weight-0">Secciones</h2>
-          <ul>
-            <li><a href="">Iniciar sesion</a></li>
-            <li><a href="">Registrate</a></li>
-            <li><a href="">Asociate</a></li>
-            <li><a href="">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="footer-cajas padding-16">
-          <h2 class="weight-0">Servicios</h2>
-          <ul>
-            <li><a href="">Usuarios</a></li>
-            <li><a href="">Profesionales</a></li>
-            <li><a href="">Presupuestos</a></li>
-            <li><a href="">Consultas</a></li>
-          </ul>
-        </div>
-        <div class="footer-cajas padding-16">
-          <h2 class="weight-0">Secciones</h2>
-          <ul>
-            <li><a href="">Iniciar sesion</a></li>
-            <li><a href="">Registrate</a></li>
-            <li><a href="">Asociate</a></li>
-            <li><a href="">Contacto</a></li>
-          </ul>
-        </div>
-        </div>
-        <div class="footer-cajas padding-16">
-          <h2 class="weight-0">Seguinos</h2>
-          <a href="#"> <i class="fab fa-instagram"></i> </a>
-          <a href="#"> <i class="fab fa-facebook-square"></i> </a>
-          <a href="#"> <i class="fab fa-tiktok"></i> </a>
-          <a href="#"> <i class="fab fa-twitter"></i> </a>
-          <a href="#"> <i class="fab fa-youtube"></i> </a>
-          <p>ola@ola.com.ar</p>
-          <p>+54 11 12345678</p>
-        </div>
-
-      </div>
-    </footer>
+<!-- footer -->
+<%- include("./partials/footer") %>
   </body>
 </html>
