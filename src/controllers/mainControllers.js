@@ -8,8 +8,8 @@ const mainControllers = {
   associate: (req, res) => {
     res.render("associate");
   },
-  contact: (req, res) => {
-    res.render("contact");
+  professionals: (req, res) => {
+    res.render("professionals");
   },
   detail: (req, res) => {
     res.render("products/detail");

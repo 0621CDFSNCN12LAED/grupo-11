@@ -48,6 +48,20 @@
   margin: 0 40px;
 }
 
+/* Profesionales */
+
+#main {
+  width: 75%;
+}
+
+.contenedor-p {
+  width: 45%;
+  padding: 15px;
+}
+
+.profesional {
+}
+
 /* Footer */
 
 #footer-main {

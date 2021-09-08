@@ -9,7 +9,7 @@ router.get("/service", mainControllers.service);
 
 router.get("/associate", mainControllers.associate);
 
-router.get("/contact", mainControllers.contact);
+router.get("/professionals", mainControllers.professionals);
 
 router.get("/detail", mainControllers.detail);
 

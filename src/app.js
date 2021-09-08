@@ -19,7 +19,7 @@ app.use("/service", mainRouters);
 
 app.use("/associate", mainRouters);
 
-app.use("/contact", mainRouters);
+app.use("/professionals", mainRouters);
 
 /* Products */
 

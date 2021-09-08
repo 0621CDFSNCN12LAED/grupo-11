@@ -46,7 +46,7 @@ body {
   max-height: 600px;
 }
 
-#enlaces a {
+.contenedor a {
   text-decoration: 0;
 }
 
@@ -57,6 +57,29 @@ body {
 
 .descripcion {
   padding: 10% 5%;
+}
+
+/* Profesionales */
+
+.contenedor-p {
+  width: 85%;
+  margin: 50px auto;
+}
+.contenedor-p a {
+  text-decoration: 0;
+}
+
+.contenedor-p ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profesional {
+  background-color: orange;
+}
+
+.detalle {
+  padding: 15px;
 }
 
 /* Footer */
