@@ -3,119 +3,83 @@
   <!-- Head -->
   <%- include("../partials/head") %>
   <body>
-        <!-- Header -->
+    <!-- Header -->
     <%- include("../partials/header") %>
-        <!-- Main -->
+    <!-- Main -->
     <main class="padding-16">
-     
       <h1>Registro</h1>
-      <form>
-          <div class="form-input">
-          <label class="main-label" 
-          for="name">Nombre y Apellido</label>
-          <input 
-          id="name" 
-          type="text" 
-          name ="name" 
-          placeholder="Nombre y Apellido"
+      <form method="POST">
+        <div class="form-input">
+          <label class="main-label" for="name">Nombre y Apellido</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Nombre y Apellido"
           />
-          </div>
-
-          <div class="form-input">
-            <label class="main-label" for="username">Nombre de usuario</label>
-            <input id="username" type="text" name ="username" placeholder="Nombre de usuario"/>
-          </div>
-
-          <div class="form-input">
-            <label class="main-label" for="birthday">Fecha de nacimiento</label>
-            <input id="birthday" type="date" name ="birthday" />
-          </div>    
-
-          <div class="form-input">
-            <label class="main-label" for="address">Domicilio</label>
-            <input id="address" type="text" name ="address" placeholder="Domicilio"/>
-          </div>
-          <label class="main-label">Perfil de usuario</label>
-          <div class="form-input">
-            <input type="radio" name="user-profile" id="user-profile-seller" value="seller"/>
-            <label for="user-profile-seller">Vendedor</label>
-            <input type="radio" name="user-profile" id="user-profile-buyer" value="buyer"/>
-            <label>Comprador</label>
-          </div>
-          <div class="form-input">
-            <label class="main-label">Interese</label>
-            <div>
-              <input
-            type="checkbox"
-            name="Pintor"
-            id="Pintor"
-            value="Pintor"
-            />
-            <label for="Pintor">Pintor</label>
-            </div>
-            <div>
-              <input
-            type="checkbox"
-            name="Carpintero"
-            id="Carpintero"
-            value="Carpintero"
-            />
-            <label for="Pintor">Carpintero</label>
-            </div>
-          </div>
-          <div>
-            <input
-          type="checkbox"
-          name="Electricista"
-          id="Electricista"
-          value="Electricista"
-          />
-          <label for="Pintor">Electricista</label>
-          </div>
-          <div>
-            <input
-          type="checkbox"
-          name="Jardineria"
-          id="Jardineria"
-          value="Jardineria"
-          />
-          <label for="Jardineria">Jardineria</label>
-          </div>
-          <div>
-            <input
-          type="checkbox"
-          name="Gasista"
-          id="Gasista"
-          value="Gasista"
-          />
-          <label for="Jardineria">Gasista</label>
-          </div>
         </div>
         <div class="form-input">
-          <label class="main-label" for="profile-pic">Foto de Perfil</label>
-          <input id="profile-pic" type="file" name ="profile-pic" placeholder="profile-pic"
-          accept="image/png,image/jpg"/>
+          <label class="main-label" for="user-name">Nombre de usuario</label>
+          <input
+            id="user-name"
+            type="text"
+            name="user-name"
+            placeholder="Nombre de usuario"
+          />
         </div>
-          <div class="form-input">
-            <label class="main-label" for="password">Contraseña</label>
-            <input id="password" type="text" name ="password" placeholder="contraseña"/>
-          </div>
-          <div class="form-input">
-            <label class="main-label" for="Repassword">Repetir contraseña</label>
-            <input id="password" type="text" name ="password" placeholder="Repetir contraseña"/>
-          </div>
+        <div class="form-input">
+          <label class="main-label" for="birthday">Fecha de nacimiento</label>
+          <input id="birthday" type="date" name="birthday" />
+        </div>
+        <div class="form-input">
+          <label class="main-label" for="address">Domicilio</label>
+          <input
+            id="address"
+            type="text"
+            name="address"
+            placeholder="Domicilio"
+          />
+        </div>
 
-          </div>
+        <div class="form-input">
+          <label class="main-label" for="email">Correo electronico</label>
+          <input id="email" type="email" name="email" placeholder="Domicilio" />
+        </div>
 
-          <button type="submit">Enviar</button>
-          <button type="reset">Resetear</button>
+        <div class="form-input">
+          <label class="main-label" for="image">Foto de Perfil</label>
+          <input
+            id="image"
+            type="file"
+            name="image"
+            placeholder="image"
+            accept="image/png,image/jpg"
+          />
+        </div>
+        <div class="form-input">
+          <label class="main-label" for="password">Contraseña</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="contraseña"
+          />
+        </div>
+        <div class="form-input">
+          <label class="main-label" for="re-password">Repetir contraseña</label>
+          <input
+            id="re-password"
+            type="password"
+            name="re-password"
+            placeholder="Repetir contraseña"
+          />
+        </div>
 
-        
-
+        <button type="submit">Enviar</button>
+        <button type="reset">Resetear</button>
       </form>
-     
     </main>
-<!-- footer -->
-<%- include("../partials/footer") %>
+    <!-- footer -->
+    <%- include("../partials/footer") %>
   </body>
 </html>

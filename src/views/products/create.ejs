@@ -10,108 +10,96 @@
     <main class="padding-16">
       <h1>Asociarte</h1>
       <form action="" method="POST">
+        <form method="POST">
           <div class="form-input">
-          <label class="main-label" 
-          for="name">Nombre y Apellido</label>
-          <input 
-          id="name" 
-          type="text" 
-          name ="name" 
-          placeholder="Nombre y Apellido"
-          />
+            <label class="main-label" for="name">Nombre y Apellido</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Nombre y Apellido"
+            />
           </div>
-
           <div class="form-input">
-            <label class="main-label" for="username">Nombre de usuario</label>
-            <input id="username" type="text" name ="username" placeholder="Nombre de usuario"/>
+            <label class="main-label" for="cuil-cuit">Cuil o Cuit</label>
+            <input
+              id="cuil-cuit"
+              type="number"
+              name="cuil-cuit"
+              placeholder="Nombre de usuario"
+            />
           </div>
-
+          <div class="form-input">
+            <label class="main-label" for="dni">Documento nacional de identidad</label>
+            <input id="dni" type="number" name="dni" />
+          </div>
           <div class="form-input">
             <label class="main-label" for="birthday">Fecha de nacimiento</label>
-            <input id="birthday" type="date" name ="birthday" />
-          </div>    
-
-          <div class="form-input">
-            <label class="main-label" for="address">Domicilio</label>
-            <input id="address" type="text" name ="address" placeholder="Domicilio"/>
+            <input id="birthday" type="date" name="birthday" />
           </div>
-          <label class="main-label">Perfil de usuario</label>
-          <div class="form-input">
-            <input type="radio" name="user-profile" id="user-profile-seller" value="seller"/>
-            <label for="user-profile-seller">Vendedor</label>
-            <input type="radio" name="user-profile" id="user-profile-buyer" value="buyer"/>
-            <label>Comprador</label>
+                    <div class="form-input">
+            <label class="main-label" for="profesion">Especializacion</label>
+            <input id="profesion" type="text" name="profesion" />
           </div>
           <div class="form-input">
-            <label class="main-label">Interese</label>
-            <div>
-              <input
-            type="checkbox"
-            name="Pintor"
-            id="Pintor"
-            value="Pintor"
+            <label class="main-label" for="capacitation">Capacitacion</label>
+            <input id="capacitation" type="text" name="capacitation" />
+          </div>
+          <div class="form-input">
+            <label class="main-label" for="certification-img">Certificados</label>
+            <input id="certification-img" type="file" name="certification-img" />
+          </div>
+          
+          <div class="form-input">
+            <label class="main-label" for="profile-img">Foto de Perfil</label>
+            <input
+              id="profile-img"
+              type="file"
+              name="profile-img"
+              placeholder="image"
+              accept="image/png,image/jpg"
             />
-            <label for="Pintor">Pintor</label>
-            </div>
-            <div>
-              <input
-            type="checkbox"
-            name="Carpintero"
-            id="Carpintero"
-            value="Carpintero"
+          </div>
+          <div class="form-input">
+            <label class="main-label" for="location">Localidad</label>
+            <input
+              id="location"
+              type="text"
+              name="location"
+              placeholder="Domicilio"
             />
-            <label for="Pintor">Carpintero</label>
-            </div>
-          </div>
-          <div>
-            <input
-          type="checkbox"
-          name="Electricista"
-          id="Electricista"
-          value="Electricista"
-          />
-          <label for="Pintor">Electricista</label>
-          </div>
-          <div>
-            <input
-          type="checkbox"
-          name="Jardineria"
-          id="Jardineria"
-          value="Jardineria"
-          />
-          <label for="Jardineria">Jardineria</label>
-          </div>
-          <div>
-            <input
-          type="checkbox"
-          name="Gasista"
-          id="Gasista"
-          value="Gasista"
-          />
-          <label for="Jardineria">Gasista</label>
-          </div>
-        </div>
-        <div class="form-input">
-          <label class="main-label" for="profile-pic">Foto de Perfil</label>
-          <input id="profile-pic" type="file" name ="profile-pic" placeholder="profile-pic"
-          accept="image/png,image/jpg"/>
-        </div>
-          <div class="form-input">
-            <label class="main-label" for="password">Contraseña</label>
-            <input id="password" type="text" name ="password" placeholder="contraseña"/>
           </div>
           <div class="form-input">
-            <label class="main-label" for="Repassword">Repetir contraseña</label>
-            <input id="password" type="text" name ="password" placeholder="Repetir contraseña"/>
+            <label class="main-label" for="zip-code">Codigo postal</label>
+            <input id="zip-code" type="number" name="zip-code" />
+          </div>
+  
+          <div class="form-input">
+            <label class="main-label" for="description">Descripcion</label>
+            <textarea name="description" id="description">Describete a ti mismo</textarea>
           </div>
 
+          <div class="form-input">
+            <label class="main-label" for="pay-method">Metodos de pago aceptados</label>
+            <input id="pay-method" type="text" name="pay-method" />
           </div>
 
+          <div class="form-input">
+            <label class="main-label" for="number">Numero de telefono</label>
+            <input id="number" type="number" name="number" />
+          </div>
+          <div class="form-input">
+            <label class="main-label" for="email">Correo electronico</label>
+            <input id="email" type="email" name="email" />
+          </div>
+
+          <div class="form-input">
+            <label class="main-label" for="social-media">Redes sociales</label>
+            <input id="social-media" type="text" name="social-media" />
+          </div>
+  
           <button type="submit">Enviar</button>
           <button type="reset">Resetear</button>
-
-        
-
       </form>
     <!-- footer -->
    </main>
