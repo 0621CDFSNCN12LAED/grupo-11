@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Head -->
-  <%- include("../partials/head") %>
+  <head>
+    <%- include("../partials/head") %>
+    <title>OLA</title>
+  </head>
   <body>
     <!-- Header -->
     <%- include("../partials/header") %>
     <!-- Main -->
-    <h1><%= idUser %></h1>
 
-    <h1><%= name %></h1>
-    <h1><%= profesion %></h1>
-    <h1><%= capacitation %></h1>
-    <h1><%= profile-img %></h1>
-    <h1><%= location %></h1>
-    <h1><%= zip-code %></h1>
-    <h1><%= description %></h1>
-    <h1><%= pay-method %></h1>
-    <h1><%= number %></h1>
-    <h1><%= email %></h1>
-    <h1><%= social-media %></h1>
+    <p><%= professional.name %></p>
+    <p><%= professional.profession %></p>
+    <img
+      src="/img/profile/<%= professional.profileImage %>"
+      alt="imagen del profesional"
+      width="25%"
+    />
+    <p><%= professional.location %></p>
+    <p><%= professional.description %></p>
+    <p><%= professional.payMethod %></p>
 
+    <a href="/service/edit/<%= professional.id %>">Editar professional</a>
+
+    <form action="/service/<%= professional.id %>?_method=DELETE" method="POST">
+      <button type="submit">ELIMINAR</button>
+    </form>
     <!-- footer -->
     <%- include("../partials/footer") %>
   </body>

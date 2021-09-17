@@ -1,40 +1,40 @@
+const professionals = require("../js/profesionals");
+
 const serviceControllers = {
-  create: (req, res) => {
-    res.render("products/create");
-  },
-  save: (req, res) => {
-    const body = req.body;
-
-    const user = {
-      name: req.body.name,
-      email: req.body.email,
-    };
-
-    // Guardar la info que nos envian
-
-    res.send(body);
-  },
-
-  edit: (req, res) => {
-    // Entre las llaves se necesita enviar informacion desde el json en la base de datos, para asi editar
-    res.render("products/edit", {});
-  },
-  editSave: (req, res) => {
-    res.send("put");
-  },
-
-  delete: (req, res) => {
-    res.render();
+  professionals: (req, res) => {
+    const profesionals = professionals.findAll();
+    res.render("professionals", { professionals: profesionals });
   },
 
   detail: (req, res) => {
-    const idUser = req.params.id;
-
-    res.render("products/detail", { idUser: idUser });
+    const professional = professionals.findOneById(req.params.id);
+    if (professional) {
+      res.render("products/detail", { professional: professional });
+    } else {
+      res.send("No existe esta pagina");
+    }
   },
 
-  professionals: (req, res) => {
-    res.render("professionals");
+  create: (req, res) => {
+    res.render("products/create");
+  },
+  store: (req, res) => {
+    professionals.createOne(req.body, req.file);
+    res.redirect("/service/professionals");
+  },
+
+  edit: (req, res) => {
+    const professional = professionals.findOneById(req.params.id);
+    res.render("products/edit", { professional: professional });
+  },
+  update: (req, res) => {
+    professionals.editOne(req.params.id, req.body, req.file);
+    res.redirect("/service/professionals");
+  },
+
+  destroy: (req, res) => {
+    professionals.destroyOne(req.params.id);
+    res.redirect("/service/professionals");
   },
 };
 

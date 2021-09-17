@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+    <title>OLA</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+    <!-- Main -->
+    <main class="padding-16">
+      <h1>Registrarte</h1>
+      <form action="" method="POST">
+        <div class="form-input">
+          <label class="main-label" for="name">Nombre y Apellido</label>
+          <input id="name" type="text" name="name" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="birthday">Fecha de nacimiento</label>
+          <input id="birthday" type="date" name="birthday" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="email">Correo electronico</label>
+          <input id="email" type="email" name="email" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="user-image">Foto de usuario</label>
+          <input id="user-image" type="file" name="user-image" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="password">Contraseña</label>
+          <input id="password" type="password" name="password" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="re-password">Repetir contraseña</label>
+          <input id="re-password" type="password" name="re-password" />
+        </div>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Resetear</button>
+      </form>
+    </main>
+    <!-- footer -->
+    <%- include("../partials/footer") %>
+  </body>
+</html>

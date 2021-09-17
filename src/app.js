@@ -15,6 +15,8 @@ app.listen(3000, console.log("Servidor funcionando"));
 
 app.set("view engine", "ejs");
 
+app.set("views", path.join(__dirname, "./views"));
+
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(express.urlencoded({ extended: false }));
@@ -29,7 +31,7 @@ app.use("/", mainRouters);
 
 app.use("/service", serviceRouters);
 
-app.use("/users", userRouters);
+app.use("/user", userRouters);
 
 /* Error 404 
 

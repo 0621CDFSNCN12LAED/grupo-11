@@ -1,0 +1,18 @@
+<div class="contenedor-p">
+  <div class="profesional">
+    <a href="/service/detail/<%= professional.id %>">
+      <img
+        src="/img/profile/<%= professional.profileImage %>"
+        alt="Profesional"
+        class="w-100 block"
+      />
+    </a>
+    <div class="detalle">
+      <a href="/service/detail/<%= professional.id %>">
+        <h1><%= professional.name %></h1>
+      </a>
+      <h2><%= professional.profession %></h2>
+      <p><%= professional.location %></p>
+    </div>
+  </div>
+</div>

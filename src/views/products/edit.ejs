@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Head -->
-  <%- include("../partials/head") %>
+  <head>
+    <%- include("../partials/head") %>
+    <title>OLA</title>
+  </head>
   <body>
     <!-- Header -->
     <%- include("../partials/header") %>
     <!-- Main -->
-    <form action="/service/edit?_method=PUT" method="POST">
-      <!-- Formulario con tags EJS, que varie dependiendo el usuario a editar, se necesita informacion ya existente -->
-      <input type="submit" name="" id="" />
+    <form
+      action="/service/<%= professional.id %>?_method=PUT"
+      method="POST"
+    >
+
+    <div class="form-input">
+      <label class="main-label" for="name">Nombre y Apellido</label>
+      <input id="name" type="text" name="name" value="<%= professional.name %>"/>
+    </div>
+
+    <div class="form-input">
+      <label class="main-label" for="profession">Profesion</label>
+      <input id="profession" type="text" name="profession" value="<%= professional.profession %>"/>
+    </div>
+
+    <div class="form-input">
+      <label class="main-label" for="profileImage">Foto de Perfil</label>
+      <input id="profileImage" type="file" name="profileImage" value="/img/profile/<%= professional.profileImage %>"/>
+      <img src="/img/profile/<%= professional.profileImage %>"width="25%" />
+    </div>
+
+    <div class="form-input">
+      <label class="main-label" for="location">Localidad</label>
+      <input id="location" type="text" name="location" value="<%= professional.location %>"/>
+    </div>
+
+    <div class="form-input">
+      <label class="main-label" for="description">Descripcion</label>
+      <textarea name="description" id="description"><%= professional.description %></textarea>
+    </div>
+
+    <div class="form-input">
+      <label class="main-label" for="payMethod">Metodos de pago</label>
+      <input id="payMethod" type="text" name="payMethod" value="<%= professional.payMethod %>"/>
+    </div>
+
+      <button type="submit">Guardar ediciones</button>
+
+      </form>
     </form>
     <!-- footer -->
     <%- include("../partials/footer") %>

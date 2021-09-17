@@ -1,109 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Head -->
-  <%- include("../partials/head") %>
+  <head>
+    <%- include("../partials/head") %>
+    <title>Asociarte</title>
+  </head>
   <body>
     <!-- Header -->
     <%- include("../partials/header") %>
     <!-- Main -->
-    <h1>Aca modificar el formulario y estilizar con CSS</h1>
     <main class="padding-16">
       <h1>Asociarte</h1>
-      <form action="" method="POST">
-        <form method="POST">
-          <div class="form-input">
-            <label class="main-label" for="name">Nombre y Apellido</label>
-            <input
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Nombre y Apellido"
-            />
-          </div>
-          <div class="form-input">
-            <label class="main-label" for="cuil-cuit">Cuil o Cuit</label>
-            <input
-              id="cuil-cuit"
-              type="number"
-              name="cuil-cuit"
-              placeholder="Nombre de usuario"
-            />
-          </div>
-          <div class="form-input">
-            <label class="main-label" for="dni">Documento nacional de identidad</label>
-            <input id="dni" type="number" name="dni" />
-          </div>
-          <div class="form-input">
-            <label class="main-label" for="birthday">Fecha de nacimiento</label>
-            <input id="birthday" type="date" name="birthday" />
-          </div>
-                    <div class="form-input">
-            <label class="main-label" for="profesion">Especializacion</label>
-            <input id="profesion" type="text" name="profesion" />
-          </div>
-          <div class="form-input">
-            <label class="main-label" for="capacitation">Capacitacion</label>
-            <input id="capacitation" type="text" name="capacitation" />
-          </div>
-          <div class="form-input">
-            <label class="main-label" for="certification-img">Certificados</label>
-            <input id="certification-img" type="file" name="certification-img" />
-          </div>
-          
-          <div class="form-input">
-            <label class="main-label" for="profile-img">Foto de Perfil</label>
-            <input
-              id="profile-img"
-              type="file"
-              name="profile-img"
-              placeholder="image"
-              accept="image/png,image/jpg"
-            />
-          </div>
-          <div class="form-input">
-            <label class="main-label" for="location">Localidad</label>
-            <input
-              id="location"
-              type="text"
-              name="location"
-              placeholder="Domicilio"
-            />
-          </div>
-          <div class="form-input">
-            <label class="main-label" for="zip-code">Codigo postal</label>
-            <input id="zip-code" type="number" name="zip-code" />
-          </div>
-  
-          <div class="form-input">
-            <label class="main-label" for="description">Descripcion</label>
-            <textarea name="description" id="description">Describete a ti mismo</textarea>
-          </div>
+      <form action="/service" method="POST" enctype="multipart/form-data">
+        <div class="form-input">
+          <label class="main-label" for="name">Nombre y Apellido</label>
+          <input id="name" type="text" name="name" />
+        </div>
 
-          <div class="form-input">
-            <label class="main-label" for="pay-method">Metodos de pago aceptados</label>
-            <input id="pay-method" type="text" name="pay-method" />
-          </div>
+        <div class="form-input">
+          <label class="main-label" for="cuilCuit">Cuil/Cuit</label>
+          <input id="cuilCuit" type="number" name="cuilCuit" />
+        </div>
 
-          <div class="form-input">
-            <label class="main-label" for="number">Numero de telefono</label>
-            <input id="number" type="number" name="number" />
-          </div>
-          <div class="form-input">
-            <label class="main-label" for="email">Correo electronico</label>
-            <input id="email" type="email" name="email" />
-          </div>
+        <div class="form-input">
+          <label class="main-label" for="dni">DNI</label>
+          <input id="dni" type="number" name="dni" />
+        </div>
 
-          <div class="form-input">
-            <label class="main-label" for="social-media">Redes sociales</label>
-            <input id="social-media" type="text" name="social-media" />
-          </div>
-  
-          <button type="submit">Enviar</button>
-          <button type="reset">Resetear</button>
+        <div class="form-input">
+          <label class="main-label" for="profession">Profesion</label>
+          <input id="profession" type="text" name="profession" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="profileImage">Foto de Perfil</label>
+          <input id="profileImage" type="file" name="profileImage" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="location">Localidad</label>
+          <input id="location" type="text" name="location" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="description">Descripcion</label>
+          <textarea name="description" id="description"></textarea>
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="payMethod">Metodos de pago</label>
+          <input id="payMethod" type="text" name="payMethod" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="celphone">Numero de celular</label>
+          <input id="celphone" type="number" name="celphone" />
+        </div>
+
+        <div class="form-input">
+          <label class="main-label" for="email">Correo electronico</label>
+          <input id="email" type="email" name="email" />
+        </div>
+        <button type="submit">Enviar</button>
+        <button type="reset">Resetear</button>
       </form>
+    </main>
     <!-- footer -->
-   </main>
     <%- include("../partials/footer") %>
   </body>
 </html>
-
