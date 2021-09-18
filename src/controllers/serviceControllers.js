@@ -9,14 +9,14 @@ const serviceControllers = {
   detail: (req, res) => {
     const professional = professionals.findOneById(req.params.id);
     if (professional) {
-      res.render("products/detail", { professional: professional });
+      res.render("serviceP/detail", { professional: professional });
     } else {
       res.send("No existe esta pagina");
     }
   },
 
   create: (req, res) => {
-    res.render("products/create");
+    res.render("serviceP/create");
   },
   store: (req, res) => {
     professionals.createOne(req.body, req.file);
@@ -25,7 +25,7 @@ const serviceControllers = {
 
   edit: (req, res) => {
     const professional = professionals.findOneById(req.params.id);
-    res.render("products/edit", { professional: professional });
+    res.render("serviceP/edit", { professional: professional });
   },
   update: (req, res) => {
     professionals.editOne(req.params.id, req.body, req.file);
