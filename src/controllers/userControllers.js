@@ -1,3 +1,5 @@
+const professionals = require("");
+
 const userControllers = {
   cart: (req, res) => {
     res.render("user/cart");
@@ -7,14 +9,14 @@ const userControllers = {
     res.render("user/login");
   },
   userlogin: (req, res) => {
-    res.render("user/login");
+    res.redirect("");
   },
 
   register: (req, res) => {
     res.render("user/register");
   },
   userRegister: (req, res) => {
-    res.render("user/login");
+    res.redirect("");
   },
 };
 
