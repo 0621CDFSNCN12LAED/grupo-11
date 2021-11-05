@@ -1,15 +1,18 @@
-const professionals = require("../js/profesionals");
+const sequelize =  require('sequelize')
+const db = require('../database/models')
+
+console.log(sequelize)
 
 const serviceControllers = {
   professionals: (req, res) => {
-    const profesionals = professionals.findAll();
-    res.render("professionals", { professionals: profesionals });
+    const professionals = db.professionals.findAll()
+    res.render("professionals", {professionals : professionals});
   },
 
   detail: (req, res) => {
-    const professional = professionals.findOneById(req.params.id);
-    if (professional) {
-      res.render("serviceP/detail", { professional: professional });
+    //
+    if (null) {
+      res.render("serviceP/detail", {});
     } else {
       res.send("No existe esta pagina");
     }
@@ -19,21 +22,21 @@ const serviceControllers = {
     res.render("serviceP/create");
   },
   store: (req, res) => {
-    professionals.createOne(req.body, req.file);
+    //
     res.redirect("/service/professionals");
   },
 
   edit: (req, res) => {
-    const professional = professionals.findOneById(req.params.id);
-    res.render("serviceP/edit", { professional: professional });
+    //
+    res.render("serviceP/edit", {});
   },
   update: (req, res) => {
-    professionals.editOne(req.params.id, req.body, req.file);
+    //
     res.redirect("/service/professionals");
   },
 
   destroy: (req, res) => {
-    professionals.destroyOne(req.params.id);
+    //
     res.redirect("/service/professionals");
   },
 };

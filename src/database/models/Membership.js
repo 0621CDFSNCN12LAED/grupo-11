@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     "Membership",
     {
       id: {
-        type: dataTypes.INTERGER(10),
+        type: dataTypes.INTEGER(10),
         primaryKey: true,
         autoIncrement: true,
       },
@@ -18,5 +18,5 @@ module.exports = (sequelize, dataTypes) => {
     }
   );
 
-  return Memberships;
+  return Membership;
 };
