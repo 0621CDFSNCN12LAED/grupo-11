@@ -1,4 +1,4 @@
-module.exports = (sequelize, dataTypes) => {
+/*module.exports = (sequelize, dataTypes) => {
   const Users_professionals = sequelize.define(
     "Users_professionals",
     {
@@ -30,4 +30,4 @@ module.exports = (sequelize, dataTypes) => {
     }
   );
   return Users_professionals;
-};
+}; */

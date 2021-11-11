@@ -32,5 +32,15 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     })
 
+    User.associate = function (models) {
+        User.belongsToMany(models.Professional, {
+            as: "professional",
+            through: "Users_professionals",
+            foreignKey: "id_user",
+            otherKey: "id_professional",
+            timestamps: false,
+        });
+    }
+
     return User;
 }

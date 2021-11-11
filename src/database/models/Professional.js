@@ -48,6 +48,21 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'professionals',
         timestamps: false
     })
+    
+    Professional.associate = function (models) {
+        Professional.belongsTo(models.Membership, {
+            as: "membership",
+            foreignKey: "id_membership"
+        });
+
+        Professional.belongsToMany(models.User, {
+            as: "user",
+            through: "Users_professionals",
+            foreignKey: "id_professional",
+            otherKey: "id_user",
+            timestamps: false,
+        });
+    }
 
     return Professional;
 }

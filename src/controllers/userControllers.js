@@ -1,5 +1,3 @@
-const professionals = require("");
-
 const userControllers = {
   cart: (req, res) => {
     res.render("user/cart");
