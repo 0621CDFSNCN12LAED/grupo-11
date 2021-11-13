@@ -11,8 +11,10 @@
     <main>
       <h1 class="centrado">Esta es nuestra lista de profesionales</h1>
       <div id="main" class="flex">
-        <% for(let professional of professionals){ %> <%- include("partials/professionals",
-        {professional:professional}) %> <% } %>
+        <% for(let professional of professionals){ %> <%-
+        include("partials/professionals", {professional:professional}) %> <% }
+        %>
+      </div>
     </main>
     <!-- footer -->
     <%- include("./partials/footer") %>

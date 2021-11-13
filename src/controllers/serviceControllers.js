@@ -1,10 +1,16 @@
+const db = require("../database/models/index.js");
+
 const serviceControllers = {
   professionals: (req, res) => {
-    res.render("professionals", {});
+    db.Professional.findAll().then(function (x) {
+      res.render("professionals", { professional: x });
+    });
   },
 
   detail: (req, res) => {
-    //
+    const professional = db.Professional.findByPk(req.params.id).then(function (x) {
+      res.render("professionals", { professional: x });
+    });
     if (null) {
       res.render("serviceP/detail", {});
     } else {
@@ -12,7 +18,18 @@ const serviceControllers = {
     }
   },
 
-  create: (req, res) => {
+  create: (req, res) => { db.Professional.create({
+      name: "",
+      birthday: "",
+      email: "",
+      user-image: "",
+      password: "",
+      re-password: ""
+    }).then(function (
+      x
+    ) {
+      res.render("professionals", { professional: x });
+    });
     res.render("serviceP/create");
   },
   store: (req, res) => {
