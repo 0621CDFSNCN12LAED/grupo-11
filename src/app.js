@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 const mainRouters = require("./routers/mainRouters");
 const serviceRouters = require("./routers/serviceRouters");
 const userRouters = require("./routers/userRouters");
-
+const professionalsRouters = require("./routers/professionalsRouters");
 /* Abrir servidor */
 
 app.listen(3000, console.log("Servidor funcionando"));
@@ -32,6 +32,8 @@ app.use("/", mainRouters);
 app.use("/service", serviceRouters);
 
 app.use("/user", userRouters);
+
+app.use("/professionals", professionalsRouters);
 
 /* Error 404
 

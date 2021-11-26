@@ -1,7 +1,6 @@
-//index.js va en este require????
-const db = require("../database/models/index.js");
+let db = require("../database/models");
 
-const serviceControllers = {
+let professionalsController = {
   professionals: (req, res) => {
     db.Professional.findAll().then(function (x) {
       res.render("professionals", { professional: x });
@@ -53,4 +52,5 @@ const serviceControllers = {
   },
 };
 
-module.exports = serviceControllers;
+
+module.exports = professionalsController;
