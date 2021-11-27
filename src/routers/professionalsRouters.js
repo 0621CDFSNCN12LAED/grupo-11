@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const multer = require("multer");
+const path = require("path");
 
 //Copié y pegué del archivo serviceRouters.js
 const storage = multer.diskStorage({

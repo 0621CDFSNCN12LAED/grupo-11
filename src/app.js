@@ -7,11 +7,10 @@ const mainRouters = require("./routers/mainRouters");
 const serviceRouters = require("./routers/serviceRouters");
 const userRouters = require("./routers/userRouters");
 const professionalsRouters = require("./routers/professionalsRouters");
-const membershipsRouters = require("./routers/membershipsRouters");
 
 /* Abrir servidor */
 
-app.listen(3001, console.log("Servidor funcionando"));
+app.listen(3000, console.log("Servidor funcionando"));
 
 /* Configuracion */
 
@@ -37,7 +36,6 @@ app.use("/user", userRouters);
 
 app.use("/professionals", professionalsRouters);
 
-app.use("/memberships", membershipsRouters);
 
 /* Error 404
 
