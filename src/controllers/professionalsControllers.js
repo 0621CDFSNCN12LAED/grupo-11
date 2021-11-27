@@ -22,9 +22,9 @@ let professionalsController = {
       name: "",
       birthday: "",
       email: "",
-      user-image: "",
+      userImage: "",
       password: "",
-      re-password: ""
+      rePassword: ""
     }).then(function (
       x
     ) {

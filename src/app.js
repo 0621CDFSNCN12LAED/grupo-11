@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require ("express-session");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
@@ -22,9 +23,12 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(express.urlencoded({ extended: false }));
 
+app.use(session({secret: "Estas logeado"}));
+
 app.use(express.json());
 
 app.use(methodOverride("_method"));
+
 
 /* Rutas */
 
