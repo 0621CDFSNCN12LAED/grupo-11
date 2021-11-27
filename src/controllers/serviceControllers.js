@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 const db = require("../database/models");
+=======
+//index.js va en este require????
+const db = require("../database/models/index.js");
+>>>>>>> 27c9bf6d631a6c48be1e8584ca86af425cbde5cd
 
 const serviceControllers = {
   professionals: (req, res) => {
