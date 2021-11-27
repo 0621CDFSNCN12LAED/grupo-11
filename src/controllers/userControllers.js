@@ -16,6 +16,10 @@ const userControllers = {
   userRegister: (req, res) => {
     res.redirect("");
   },
+  //agregado para la parte de Membresías disponibles
+  memberships: (req, res) => {
+    res.render("user/memberships");
+  },
 };
 
 module.exports = userControllers;

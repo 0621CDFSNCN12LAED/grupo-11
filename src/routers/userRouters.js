@@ -28,4 +28,7 @@ router.post(
   userControllers.userRegister
 );
 
+//Membresías disponibles
+router.get("/memberships", userControllers.memberships);
+
 module.exports = router;

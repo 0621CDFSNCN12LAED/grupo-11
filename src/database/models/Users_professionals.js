@@ -1,4 +1,4 @@
-/*module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
   const Users_professionals = sequelize.define(
     "Users_professionals",
     {
@@ -10,18 +10,10 @@
       id_user: {
         type: dataTypes.INTEGER(10),
         allowNull: false,
-        references: {
-          model: User,
-          key: "id",
-        },
       },
       id_professional: {
         type: dataTypes.INTEGER(10),
         allowNull: false,
-        references: {
-          model: Professional,
-          key: "id",
-        },
       },
     },
     {
@@ -30,4 +22,4 @@
     }
   );
   return Users_professionals;
-}; */
+};

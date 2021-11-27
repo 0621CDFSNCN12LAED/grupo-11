@@ -9,7 +9,7 @@ const userRouters = require("./routers/userRouters");
 
 /* Abrir servidor */
 
-app.listen(3000, console.log("Servidor funcionando"));
+app.listen(3001, console.log("Servidor funcionando"));
 
 /* Configuracion */
 

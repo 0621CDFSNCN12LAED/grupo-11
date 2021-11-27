@@ -21,8 +21,8 @@ module.exports = (sequelize, dataTypes) => {
   Membership.associate = function (models) {
     Membership.hasMany(models.Professional, {
       as: "Professional",
-      foreignKey: "id_membership"
+      foreignKey: "id_membership",
     });
-  }
+  };
   return Membership;
 };
