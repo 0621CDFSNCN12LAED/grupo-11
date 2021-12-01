@@ -1,8 +1,6 @@
 const bcrypt = require('bcryptjs');
 const session = require('express-session')
 const db = require("../database/models");
- 
-let passEncriptada = bcrypt.hashSync;
 
 
 const userControllers = {
@@ -11,33 +9,45 @@ const userControllers = {
   },
 
   login: (req, res) => {
-    let user = db.User.findAll().then;
-    for (let i = 0; i < user.length; i++) {
-      if (users[i].email == req.body.email) {
-        if (bcrypt.compareSync(req.body.password, passEncriptada)) { 
-          let usuarioALoguearse = user[i];
-          break;
-        }
-      };
-      
-    }
-    if (usuarioALoguearse == undefined) {
-      return res.redirect("user/login");
-    }
-    req.session.usuarioLogueado = usuarioALoguearse;
-    res.redirect("/home");
     res.render("user/login");
   },
   userlogin: (req, res) => {
-    res.redirect("");
+   let users = []
+   db.User.findAll()
+    .then (function (usuarios) {
+     users.push(usuarios)
+    })
+
+    let usuarioALoguearse
+
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].email == req.body.email) {
+        if (bcrypt.compareSync(req.body.password, users[i].password)) {
+          usuarioALoguearse = users[i];
+          break;
+        }
+      };
+    }
+
+    if (usuarioALoguearse == undefined) {
+      return res.redirect("login");
+    } else {
+      res.send("estas logueado")
+    }
+
+    req.session.usuarioLogueado = usuarioALoguearse;
+
+    if(req.body.recordame != undefined) {
+      res.cookie("recordame", users.email)
+    }
   },
 
   register: (req, res) => {
     res.render("user/register");
   },
-  
+
   userRegister: (req, res) => {
-    let passEncriptada = bcrypt.hashSync(rec.body.password, 10);
+    let passEncriptada = bcrypt.hashSync(req.body.password, 10);
 
      db.User.create({
       name: req.body.name,
@@ -47,7 +57,7 @@ const userControllers = {
       password: passEncriptada,
       rePassword: passEncriptada
     }),
-    //let check = bcrypt.compareSync(rec.body.password, passEncriptada);
+    //let check = bcrypt.compareSync(req.body.password, passEncriptada);
     res.redirect("/home");
   },
   //agregado para la parte de Membresías disponibles

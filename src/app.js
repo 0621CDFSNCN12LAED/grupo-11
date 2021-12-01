@@ -8,6 +8,7 @@ const mainRouters = require("./routers/mainRouters");
 const serviceRouters = require("./routers/serviceRouters");
 const userRouters = require("./routers/userRouters");
 const professionalsRouters = require("./routers/professionalsRouters");
+const recordameMiddleware = require("./middlewares/recordameMiddleware")
 
 /* Abrir servidor */
 
@@ -29,6 +30,7 @@ app.use(express.json());
 
 app.use(methodOverride("_method"));
 
+//app.use(recordameMiddleware);
 
 /* Rutas */
 
