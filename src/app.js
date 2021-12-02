@@ -24,9 +24,9 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(express.urlencoded({ extended: false }));
 
-app.use(session({ secret: "Estas logeado" }));
+// app.use(session({ secret: "Estas logeado" }));
 
-app.use(express.json());
+// app.use(express.json());
 
 app.use(methodOverride("_method"));
 

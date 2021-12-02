@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255),
             allowNull: false
         },
-        birtdhay: {
+        birthday: {
             type: dataTypes.DATE,
             allowNull: false
         },

@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const session = require('express-session')
 const db = require("../database/models");
+const userService = require("../services/userService")
 
 
 const userControllers = {
@@ -12,34 +13,25 @@ const userControllers = {
     res.render("user/login");
   },
   userlogin: (req, res) => {
-   let users = []
-   db.User.findAll()
-    .then (function (usuarios) {
-     users.push(usuarios)
-    })
 
-    let usuarioALoguearse
+    const user = await userService.filterByEmail(req.body.email)
 
-    for (let i = 0; i < users.length; i++) {
-      if (users[i].email == req.body.email) {
-        if (bcrypt.compareSync(req.body.password, users[i].password)) {
-          usuarioALoguearse = users[i];
-          break;
-        }
-      };
+    if (!user) {
+      res.redirect("/login")
     }
 
-    if (usuarioALoguearse == undefined) {
-      return res.redirect("login");
-    } else {
-      res.send("estas logueado")
+    if (!req.body.password == user.user_password) {
+      res.redirect("/login")
     }
 
-    req.session.usuarioLogueado = usuarioALoguearse;
+    res.redirect("/")
 
-    if(req.body.recordame != undefined) {
+    /*req.session.usuarioLogueado = "si";
+    console.log(req.session.usuarioLogueado);
+
+     if(req.body.recordame != undefined) {
       res.cookie("recordame", users.email)
-    }
+    }*/
   },
 
   register: (req, res) => {
