@@ -8,7 +8,9 @@ const mainRouters = require("./routers/mainRouters");
 const serviceRouters = require("./routers/serviceRouters");
 const userRouters = require("./routers/userRouters");
 const professionalsRouters = require("./routers/professionalsRouters");
-const recordameMiddleware = require("./middlewares/recordameMiddleware")
+const recordameMiddleware = require("./middlewares/recordameMiddleware");
+const cookieParser = require("cookie-parser");
+
 
 /* Abrir servidor */
 
@@ -19,18 +21,24 @@ app.listen(3000, console.log("Servidor funcionando"));
 app.set("view engine", "ejs");
 
 app.set("views", path.join(__dirname, "./views"));
-
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(express.urlencoded({ extended: false }));
 
-// app.use(session({ secret: "Estas logeado" }));
+app.use(session({ 
+  secret: "Estas logeado",
+  resave: true,
+  saveUninitialized: true,
+ }));
+
+
 
 // app.use(express.json());
 
 app.use(methodOverride("_method"));
 
-//app.use(recordameMiddleware);
+app.use(recordameMiddleware);
 
 /* Rutas */
 

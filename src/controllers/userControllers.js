@@ -12,26 +12,24 @@ const userControllers = {
   login: (req, res) => {
     res.render("user/login");
   },
-  userlogin: (req, res) => {
+  userlogin: async (req, res) => {
 
     const user = await userService.filterByEmail(req.body.email)
 
     if (!user) {
-      res.redirect("/login")
+      return res.redirect("/user/login");
     }
-
-    if (!req.body.password == user.user_password) {
-      res.redirect("/login")
+console.log (user);
+    if (!bcrypt.compareSync(req.body.password, user.user_password)) {
+     return res.redirect("/user/login")
     }
-
-    res.redirect("/")
-
-    /*req.session.usuarioLogueado = "si";
+    req.session.usuarioLogueado = user.id;
     console.log(req.session.usuarioLogueado);
 
      if(req.body.recordame != undefined) {
-      res.cookie("recordame", users.email)
-    }*/
+      res.cookie("recordame", user.email)
+    }
+   return res.redirect("/")
   },
 
   register: (req, res) => {
@@ -42,15 +40,15 @@ const userControllers = {
     let passEncriptada = bcrypt.hashSync(req.body.password, 10);
 
      db.User.create({
-      name: req.body.name,
+      user_name: req.body.name,
       birthday: req.body.birthday,
       email: req.body.email,
-      userImage: req.body.image,
-      password: passEncriptada,
-      rePassword: passEncriptada
+      user_image: req.body.image,
+      user_password: passEncriptada,
+      
     }),
-    //let check = bcrypt.compareSync(req.body.password, passEncriptada);
-    res.redirect("/home");
+    //
+    res.redirect("/user/login");
   },
   //agregado para la parte de Membresías disponibles
   memberships: (req, res) => {
