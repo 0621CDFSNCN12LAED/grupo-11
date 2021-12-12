@@ -11,7 +11,6 @@ const professionalsRouters = require("./routers/professionalsRouters");
 const recordameMiddleware = require("./middlewares/recordameMiddleware");
 const cookieParser = require("cookie-parser");
 
-
 /* Abrir servidor */
 
 app.listen(3000, console.log("Servidor funcionando"));
@@ -26,13 +25,13 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(express.urlencoded({ extended: false }));
 
-app.use(session({ 
-  secret: "Estas logeado",
-  resave: true,
-  saveUninitialized: true,
- }));
-
-
+app.use(
+  session({
+    secret: "Estas logeado",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 
 // app.use(express.json());
 

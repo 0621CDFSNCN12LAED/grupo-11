@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
+const { check } = require("express-validator");
 
 const storage = multer.diskStorage({
   destination: path.join(__dirname, "../../public/img/profile"),
@@ -22,6 +23,7 @@ router.post("/login", userControllers.userlogin);
 
 // Formulario de registrarse, nuevo usuario
 router.get("/register", userControllers.register);
+//Procesar el registro
 router.post(
   "/register",
   upload.single("user-image"),
