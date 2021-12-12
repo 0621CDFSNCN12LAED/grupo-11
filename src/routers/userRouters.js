@@ -17,8 +17,10 @@ const userControllers = require("../controllers/userControllers");
 
 router.get("/cart", userControllers.cart);
 
-// Formulario para ingresar a una cuenta ya registrada
-router.get("/login", userControllers.login);
+//Validaciones
+const validations =
+  // Formulario para ingresar a una cuenta ya registrada
+  router.get("/login", userControllers.login);
 router.post("/login", userControllers.userlogin);
 
 // Formulario de registrarse, nuevo usuario
