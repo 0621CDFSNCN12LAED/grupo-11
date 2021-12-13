@@ -1,5 +1,6 @@
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
+const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const userService = require("../services/userService");
 
@@ -47,7 +48,20 @@ const userControllers = {
       //
       res.redirect("/user/login");
   },
+  processRegister: (req, res) => {
+    const resultValidation = validationResult(req);
+    return res.send(resultValidation);
+    if (resultValidation.errors.length > 0) {
+      return res.render("register", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+    // Tal vez pueda ser un render, verificar!!
+    // return res.send("Las validaciones están OK!")
+  },
   //agregado para la parte de Membresías disponibles
+
   memberships: (req, res) => {
     res.render("/user/memberships");
   },
