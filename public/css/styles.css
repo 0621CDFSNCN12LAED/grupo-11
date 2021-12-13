@@ -103,3 +103,7 @@ header img {
 .espacio-vacio {
   height: 60px;
 }
+/* Errores en formulario de registro */
+div.errores {
+  color: red;
+}
