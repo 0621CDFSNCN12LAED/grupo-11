@@ -8,6 +8,9 @@ const mainControllers = {
   service: (req, res) => {
     res.render("service");
   },
+  memberships: (req, res) => {
+    res.render("memberships");
+  }
 };
 
 module.exports = mainControllers;

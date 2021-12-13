@@ -20,11 +20,11 @@
         enctype="multipart/form-data"
         class="register"
       >
-        <label class="main-label" for="name">Nombre y Apellido</label>
-        <input id="name" type="text" name="name" class = "<%= locals.errors &&
-        errors.name ? "is-invalid" : null %>" value= "<%= locals.oldData ?
-        oldData.name : null %>" /> <% if (locals.errors && errors.name) { %>
-        <div class="text-danger"><% errors.name.msg %></div>
+        <label class="main-label" for="userName">Nombre y Apellido</label>
+        <input id="userName" type="text" name="userName" class = "<%= locals.errors &&
+        errors.userName ? "is-invalid" : null %>" value= "<%= locals.oldData ?
+        oldData.userName : null %>" /> <% if (locals.errors && errors.userName) { %>
+        <div class="text-danger"><% errors.userName.msg %></div>
         <% } %>
         <div class="form-input">
           <label class="main-label" for="birthday">Fecha de nacimiento</label>
@@ -42,24 +42,24 @@
 
         <div class="form-input">
           <label class="main-label" for="userImage">Foto de usuario</label>
-          <input id="user-image" type="file" name="user-image" />
-          <% if (locals.errors && errors.user-image) { %>
-          <div class="text-danger"><% errors.user-image.msg %></div>
+          <input id="userImage" type="file" name="userImage" />
+          <% if (locals.errors && errors.userImage) { %>
+          <div class="text-danger"><% errors.userImage.msg %></div>
           <% } %>
         </div>
 
         <div class="form-input">
-          <label class="main-label" for="password">Contraseña</label>
-          <input id="password" type="password" name="password" class = "<%=
-          locals.errors && errors.password ? "is-invalid" : null %>"/> <% if
-          (locals.errors && errors.password) { %>
-          <div class="text-danger"><% errors.password.msg %></div>
+          <label class="main-label" for="userPassword">Contraseña</label>
+          <input id="userPassword" type="password" name="userPassword" class = "<%=
+          locals.errors && errors.userPassword ? "is-invalid" : null %>"/> <% if
+          (locals.errors && errors.userPassword) { %>
+          <div class="text-danger"><% errors.userPassword.msg %></div>
           <% } %>
         </div>
 
         <div class="form-input">
           <label class="main-label" for="rePassword">Repetir contraseña</label>
-          <input id="re-password" type="password" name="re-password" />
+          <input id="rePassword" type="password" name="rePassword" />
         </div>
 
         <button type="submit">Enviar</button>

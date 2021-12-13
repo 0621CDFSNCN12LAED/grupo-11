@@ -1,6 +1,7 @@
 const db = require("../database/models");
 
 const serviceControllers = {
+  // Mostrar todos los profesionales
   professionals: (req, res) => {
     db.Professional.findAll().then(function (x) {
       res.render("professionals", { professional: x });
@@ -8,6 +9,7 @@ const serviceControllers = {
   },
 
   detail: (req, res) => {
+    // Mostrar detalle de un profesional
     const professional = db.Professional.findByPk(req.params.id).then(function (
       x
     ) {
@@ -21,9 +23,11 @@ const serviceControllers = {
   },
 
   create: (req, res) => {
+    // Mostrar formulario para crear un perfil profesional
     res.render("serviceP/create");
   },
   store: (req, res) => {
+    // Crear un perfil profesional
     db.Professional.create({
       name: req.body.name,
       cuilCuit: req.body.cuilCuit,
@@ -41,10 +45,11 @@ const serviceControllers = {
   },
 
   edit: (req, res) => {
-    //
+    // Mostrar formulario para editar un perfil profesional
     res.render("serviceP/edit", {});
   },
   update: (req, res) => {
+    // Editar un perfil profesional
     db.professional.update(
       {
         name: req.body.name,
@@ -66,6 +71,7 @@ const serviceControllers = {
   },
 
   destroy: (req, res) => {
+    // Borrar perfil profesional
     db.professional.destroy({
       where: { id: req.params.id },
     });

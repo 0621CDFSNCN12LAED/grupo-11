@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        user_name: {
+        userName: {
             type: dataTypes.STRING(255),
             allowNull: false
         },
@@ -18,11 +18,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             unique: true
         },
-        user_image: {
+        userImage: {
             type: dataTypes.STRING(255),
             defaultValue: true
         },
-        user_password: {
+        userPassword: {
             type: dataTypes.STRING(255),
             allowNull: false
         }

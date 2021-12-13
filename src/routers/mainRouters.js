@@ -9,4 +9,6 @@ router.get("/", mainControllers.home);
 
 router.get("/service", mainControllers.service);
 
+router.get("/memberships", mainControllers.memberships);
+
 module.exports = router;

@@ -4,7 +4,7 @@ const multer = require("multer");
 const path = require("path");
 
 const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../../public/img/profile"),
+  destination: path.join(__dirname, "../../public/img/professionalImage"),
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
   },
@@ -22,7 +22,7 @@ router.get("/detail/:id", serviceControllers.detail);
 
 // Asociarte como profesional y crear perfil
 router.get("/create", serviceControllers.create);
-router.post("/", upload.single("profileImage"), serviceControllers.store);
+router.post("/", upload.single("professionalImage"), serviceControllers.store);
 
 // Editar perfil del asociado
 router.get("/edit/:id", serviceControllers.edit);

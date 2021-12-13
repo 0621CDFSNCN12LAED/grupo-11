@@ -7,11 +7,11 @@ module.exports = (sequelize, dataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      professional_name: {
+      professionalName: {
         type: dataTypes.STRING(255),
         allowNull: false,
       },
-      cuil_cuit: {
+      cuilCuit: {
         type: dataTypes.BIGINT,
         allowNull: false,
         unique: true,
@@ -25,19 +25,19 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.STRING(255),
         allowNull: false,
       },
-      professional_image: {
+      professionalImage: {
         type: dataTypes.STRING(255),
         allowNull: false,
       },
-      professional_location: {
+      professionalLocation: {
         type: dataTypes.STRING(255),
         allowNull: false,
       },
-      professional_description: {
+      professionalDescription: {
         type: dataTypes.TEXT,
         allowNull: false,
       },
-      pay_method: {
+      payMethod: {
         type: dataTypes.STRING(255),
         allowNull: false,
       },
