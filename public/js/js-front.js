@@ -31,5 +31,7 @@ window.addEventListener("load", function () {
         ulErrores.innerHTML += "<li>" + errores[i] + "</li>";
       }
     }
+
+    /* FALTA VALIDAR EL TIPO DE ARCHIVO DE LA IMAGEN DE PERFIL */
   });
 });
