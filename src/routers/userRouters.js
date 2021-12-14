@@ -31,26 +31,28 @@ const validations = [
   check("userPassword")
     .notEmpty()
     .withMessage("Este campo es obligatorio.")
-    .bail()
-    .isLength({ min: 8 }),
-  check("userImage").custom((value, { req }) => {
-    const file = req.file;
-    const acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif1"];
-    //const fileExtension = path.extname(file.originalname);
-    if (!file) {
-      throw new Error("Debes subir una imagen");
-    } else {
-      const fileExtension = path.extname(file.originalname);
-      if (!acceptedExtensions.includes(fileExtension)) {
-        throw new Error(
-          `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-            ", "
-          )}`
-        );
-      }
-    }
-    return true;
-  }),
+    .bail(),
+  // .isLength({ min: 8 })
+  // .withMessage("Tiene que tener un mínimo de 8 caracteres.")
+  // .bail(),
+  // check("userImage").custom((value, { req }) => {
+  //   const file = req.file;
+  //   const acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
+  //   //const fileExtension = path.extname(file.originalname);
+  //   if (!file) {
+  //     throw new Error("Debes subir una imagen");
+  //   } else {
+  //     const fileExtension = path.extname(file.originalname);
+  //     if (!acceptedExtensions.includes(fileExtension)) {
+  //       throw new Error(
+  //         `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
+  //           ", "
+  //         )}`
+  //       );
+  //     }
+  //   }
+  //   return true;
+  // }),
 ];
 
 const userControllers = require("../controllers/userControllers");
@@ -72,6 +74,5 @@ router.post(
   validations,
   userControllers.userRegister
 );
-
 
 module.exports = router;
