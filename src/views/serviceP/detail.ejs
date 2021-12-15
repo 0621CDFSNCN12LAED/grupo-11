@@ -9,16 +9,17 @@
     <%- include("../partials/header") %>
     <!-- Main -->
 
-    <p><%= professional.name %></p>
+    <p><%= professional.professionalName %></p>
     <p><%= professional.profession %></p>
     <img
-      src="/img/profile/<%= professional.profileImage %>"
+      src="/img/professionalImage/<%= professional.professionalImage %>"
       alt="imagen del profesional"
       width="25%"
     />
-    <p><%= professional.location %></p>
-    <p><%= professional.description %></p>
+    <p><%= professional.professionalLocation %></p>
+    <p><%= professional.professionalDescription %></p>
     <p><%= professional.payMethod %></p>
+    <p><%= professional.celphone %></p>
 
     <a href="/service/edit/<%= professional.id %>">Editar professional</a>
 

@@ -2,66 +2,59 @@ const db = require("../database/models");
 
 const serviceControllers = {
   // Mostrar todos los profesionales
-  professionals: (req, res) => {
-    db.Professional.findAll().then(function (x) {
-      res.render("professionals", { professional: x });
-    });
+  professionals: async (req, res) => {
+    const professionals = await db.Professional.findAll()
+      res.render("professionals", { professional: professionals});
   },
 
-  detail: (req, res) => {
+  detail: async (req, res) => {
     // Mostrar detalle de un profesional
-    const professional = db.Professional.findByPk(req.params.id).then(function (
-      x
-    ) {
-      res.render("professionals", { professional: x });
-    });
-    if (null) {
-      res.render("serviceP/detail", {});
-    } else {
-      res.send("No existe esta pagina");
+    const professional = await db.Professional.findByPk(req.params.id)
+
+    if (professinal == null) {
+      res.send("No existe este perfil de profesional");
     }
+
+    res.render("professionals", { professional: professinal });
+
   },
 
   create: (req, res) => {
     // Mostrar formulario para crear un perfil profesional
     res.render("serviceP/create");
   },
-  store: (req, res) => {
+  store: async (req, res) => {
     // Crear un perfil profesional
-    db.Professional.create({
-      name: req.body.name,
+
+    await db.Professional.create({
+      professionalName: req.body.professionalName,
       cuilCuit: req.body.cuilCuit,
       dni: req.body.dni,
       profession: req.body.profession,
-      profileImage: req.body.profileImage,
-      location: req.body.location,
-      description: req.body.description,
+      professionalImage: req.body.professionalImage,
+      professionalLocation: req.body.professionalLocation,
+      professionlDescription: req.body.professionlDescription,
       payMethod: req.body.payMethod,
       celphone: req.body.celphone,
-      email: req.body.email,
-    }).then(function (x) {
+    })
       res.redirect("/service/professionals");
-    });
   },
 
   edit: (req, res) => {
     // Mostrar formulario para editar un perfil profesional
     res.render("serviceP/edit", {});
   },
-  update: (req, res) => {
+  update: async (req, res) => {
     // Editar un perfil profesional
-    db.professional.update(
+    await db.professional.update(
       {
-        name: req.body.name,
-        cuilCuit: req.body.cuilCuit,
-        dni: req.body.dni,
+        professionalName: req.body.professionalName,
         profession: req.body.profession,
-        profileImage: req.body.profileImage,
-        location: req.body.location,
-        description: req.body.description,
+        professionalImage: req.body.professionalImage,
+        professionalLocation: req.body.professionalLocation,
+        professionlDescription: req.body.professionlDescription,
         payMethod: req.body.payMethod,
         celphone: req.body.celphone,
-        email: req.body.email,
       },
       {
         where: { id: req.params.id },
@@ -70,9 +63,9 @@ const serviceControllers = {
     res.redirect("/service/professionals");
   },
 
-  destroy: (req, res) => {
+  destroy: async (req, res) => {
     // Borrar perfil profesional
-    db.professional.destroy({
+    await db.professional.destroy({
       where: { id: req.params.id },
     });
     res.redirect("/service/professionals");

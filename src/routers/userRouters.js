@@ -8,7 +8,6 @@ const storage = multer.diskStorage({
   destination: path.join(__dirname, "../../public/img/userImage"),
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
-    console.log(file);
   },
 });
 
@@ -75,5 +74,10 @@ router.post("/login", userControllers.userlogin);
 
 router.get("/register", userControllers.register);
 router.post("/register", upload.single('userImage'), validations, userControllers.userRegister);
+
+router.get("/edit/:id", serviceControllers.userEdit);
+router.put("/:id", serviceControllers.userUpdate);
+
+router.get("/detail/:id", serviceControllers.userProfile);
 
 module.exports = router;

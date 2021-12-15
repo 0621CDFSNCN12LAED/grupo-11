@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+    <title>OLA</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+    <!-- Main -->
+
+    <p><%= user.userName %></p>
+    <p><%= user.birthday %></p>
+    <p><%= user.email %></p>
+    <img
+      src="/img/userImage/<%= user.userImage %>"
+      alt="imagen del profesional"
+      width="25%"
+    />
+    <p><%= user.userPassword %></p>
+
+    <a href="/service/edit/<%= user.id %>">Editar perfil</a>
+
+    <form action="/service/<%= user.id %>?_method=DELETE" method="POST">
+      <button type="submit">ELIMINAR</button>
+    </form>
+    <!-- footer -->
+    <%- include("../partials/footer") %>
+  </body>
+</html>

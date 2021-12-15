@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+    <title>OLA</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+    <!-- Main -->
+    <form action="/service/<%= user.id %>?_method=PUT" method="POST"></form>
+
+    <div class="form-input">
+      <label class="main-label" for="userName">Nombre y Apellido</label>
+      <input id="userName" type="text" name="userName" value="<%= user.userName %>"/>
+    </div>
+
+    <div class="form-input">
+      <label class="main-label" for="birthday">Fecha de nacimiento</label>
+      <input id="birthday" type="text" name="birthday" value="<%= profesxsionaxl.birthday %>"/>
+    </div>
+
+    <div class="form-input">
+      <label class="main-label" for="email">Correo electronico</label>
+      <input id="email" type="email" name="email" value="<%= user.email %>"/>
+    </div>
+
+
+    <div class="form-input">
+      <label class="main-label" for="userImage">Foto de Perfil</label>
+      <input id="userImage" type="file" name="userImage" value="/img/profile/<%= user.userImage %>"/>
+      <img src="/img/profile/<%= user.userImage %>"width="25%" />
+    </div>
+
+    <div class="form-input">
+      <label class="main-label" for="userPassword">Contraseña</label>
+      <input id="userPassword" type="password" name="userPassword" value="<%= user.userPassword %>"/>
+    </div>
+
+    <button type="submit">Guardar ediciones</button>
+
+    </form>
+    <!-- footer -->
+    <%- include("../partials/footer") %>
+  </body>
+</html>

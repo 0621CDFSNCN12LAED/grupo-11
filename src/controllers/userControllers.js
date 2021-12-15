@@ -37,7 +37,7 @@ const userControllers = {
     res.render("user/register");
   },
 
-  userRegister: async (req, res) => {
+  userProfile: async (req, res) => {
    // Proceso para almacenar nueva cuenta
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
@@ -58,7 +58,34 @@ const userControllers = {
     })
 
     res.redirect("/user/login");
-  }
+  },
+  userProfile: async (req,res) => {
+    const user = await db.User.findByPk(req.params.id)
+    res.render("user/profile", { user : user})
+  },
+  userEdit: async (req, res) => {
+    // Mostrar formulario para editar un perfil profesional
+    const user = await db.User.findByPk(req.params.id)
+    res.render("user/editProfile", { user : user});
+  },
+  userUpdate: async (req, res) => {
+    // Editar un perfil profesional
+    await db.professional.update(
+      {
+        professionalName: req.body.professionalName,
+        profession: req.body.profession,
+        professionalImage: req.body.professionalImage,
+        professionalLocation: req.body.professionalLocation,
+        professionlDescription: req.body.professionlDescription,
+        payMethod: req.body.payMethod,
+        celphone: req.body.celphone,
+      },
+      {
+        where: { id: req.params.id },
+      }
+    );
+    res.redirect("/service/professionals");
+  },
 };
 
 module.exports = userControllers;

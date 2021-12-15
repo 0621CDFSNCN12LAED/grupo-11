@@ -8,10 +8,7 @@
     <!-- Header -->
     <%- include("../partials/header") %>
     <!-- Main -->
-    <form
-      action="/service/<%= professional.id %>?_method=PUT"
-      method="POST"
-    >
+    <form action="/service/<%= professional.id %>?_method=PUT" method="POST">
 
     <div class="form-input">
       <label class="main-label" for="professionalName">Nombre y Apellido</label>
@@ -44,9 +41,13 @@
       <input id="payMethod" type="text" name="payMethod" value="<%= professional.payMethod %>"/>
     </div>
 
-      <button type="submit">Guardar ediciones</button>
+    <div class="form-input">
+      <label class="main-label" for="celphone">Numero de celular</label>
+      <input id="celphone" type="number" name="celphone" value="<%= professional.celphone%>">
+    </div>
 
-      </form>
+    <button type="submit">Guardar ediciones</button>
+
     </form>
     <!-- footer -->
     <%- include("../partials/footer") %>
