@@ -21,7 +21,6 @@ const userControllers = {
     if (!user) {
       return res.redirect("/user/login");
     }
-    console.log(user);
     if (!bcrypt.compareSync(req.body.password, user.userPassword)) {
       return res.redirect("/user/login");
     }
@@ -39,38 +38,27 @@ const userControllers = {
   },
 
   userRegister: async (req, res) => {
-    // Proceso para almacenar nueva cuenta
-    // const resultValidation = validationResult(req);
-    // if (resultValidation.errors.length > 0) {
-    //   return res.render("user/register", {
-    //     errors1: resultValidation.array(),
-    //     oldData: req.body,
-    //   });
-    // }
+   // Proceso para almacenar nueva cuenta
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.render("user/register", {
+        errors1: resultValidation.array(),
+        oldData: req.body,
+      });
+    }
+
     let passEncriptada = bcrypt.hashSync(req.body.userPassword, 10);
 
     await db.User.create({
       userName: req.body.userName,
       birthday: req.body.birthday,
       email: req.body.email,
-      userImage: req.file.filename,
+      userImage: req.file ? req.file.filename : "",
       userPassword: passEncriptada,
-    });
+    })
+
     res.redirect("/user/login");
-  },
-  // processRegister: (req, res) => {
-  // Ni idea? Atte: Elias
-  //   const resultValidation = validationResult(req);
-  //   return res.send(resultValidation);
-  //   if (resultValidation.errors.length > 0) {
-  //     return res.render("register", {
-  //       errors: resultValidation.mapped(),
-  //       oldData: req.body,
-  //     });
-  //   }
-  // Tal vez pueda ser un render, verificar!!
-  // return res.send("Las validaciones están OK!")
-  // },
+  }
 };
 
 module.exports = userControllers;

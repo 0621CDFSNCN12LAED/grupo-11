@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("../partials/head") %>
-    <title>OLA</title>
-  </head>
-  <body>
-    <!-- Header -->
-    <%- include("../partials/header") %>
+
+<head>
+  <%- include("../partials/head") %>
+    <script src="js/js-front.js"></script>
+    <title>Registrate</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <%- include("../partials/header") %>
     <!-- Main -->
     <main class="padding-16">
-      <script src="js/js-front.js"></script>
       <h1>Registrarte</h1>
-      <div class="errores">
-        <ul></ul>
-      </div>
-      <form
-        action="/user/register"
-        method="POST"
-        enctype="multipart/form-data"
-        class="register"
-      >
-        <label class="main-label" for="userName">Nombre y Apellido</label>
-        <input id="userName" type="text" name="userName" class = "<%=
-        locals.errors && errors.userName ? "is-invalid" : null %>" value= "<%=
-        locals.oldData ? oldData.userName : null %>" /> <% if (locals.errors &&
-        errors.userName) { %>
-        <div class="text-danger"><% errors.userName.msg %></div>
-        <% } %>
+
+      <form action="/user/register" method="POST" enctype="multipart/form-data" class="register">
+
+        <div class="form-input">
+          <label class="main-label" for="userName">Nombre y Apellido</label>
+          <input id="userName" type="text" name="userName">
+        </div>
+
         <div class="form-input">
           <label class="main-label" for="birthday">Fecha de nacimiento</label>
           <input id="birthday" type="date" name="birthday" />
@@ -34,43 +28,37 @@
 
         <div class="form-input">
           <label class="main-label" for="email">Correo electronico</label>
-          <input id="email" type="email" name="email" class = "<%= locals.errors
-          && errors.email ? "is-invalid" : null %>"/> <% if (locals.errors &&
-          errors.email) { %>
-          <div class="text-danger"><% errors.email.msg %></div>
-          <% } %>
+          <input id="email" type="email" name="email">
         </div>
 
         <div class="form-input">
           <label class="main-label" for="userImage">Foto de usuario</label>
-          <input id="userImage" type="file" name="userImage" />
-          <% if (locals.errors && errors.userImage) { %>
-          <div class="text-danger"><% errors.userImage.msg %></div>
-          <% } %>
+          <input id="userImage" type="file" name="userImage">
         </div>
 
         <div class="form-input">
           <label class="main-label" for="userPassword">Contraseña</label>
-          <input id="userPassword" type="password" name="userPassword" class =
-          "<%= locals.errors && errors.userPassword ? "is-invalid" : null %>"/>
-          <% if (locals.errors && errors.userPassword) { %>
-          <div class="text-danger"><% errors.userPassword.msg %></div>
-          <% } %>
+          <input id="userPassword" type="password" name="userPassword">
         </div>
 
         <div class="form-input">
           <label class="main-label" for="rePassword">Repetir contraseña</label>
           <input id="rePassword" type="password" name="rePassword" />
         </div>
-        <% if (locals.errors1) { locals.errors1.forEach(element => { %>
-        <p><%= element.msg %></p>
-        <% }) } %>
 
         <button type="submit">Enviar</button>
         <button type="reset">Resetear</button>
       </form>
     </main>
+
+    <% if (locals.errors1) { locals.errors1.forEach(element=> { %>
+      <p>
+        <%= element.msg %>
+      </p>
+    <% }) } %>
+
     <!-- footer -->
     <%- include("../partials/footer") %>
-  </body>
+</body>
+
 </html>

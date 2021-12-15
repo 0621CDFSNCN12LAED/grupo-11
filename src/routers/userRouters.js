@@ -8,51 +8,57 @@ const storage = multer.diskStorage({
   destination: path.join(__dirname, "../../public/img/userImage"),
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
+    console.log(file);
   },
 });
 
 const upload = multer({ storage });
 
-//Validaciones
+// Validaciones
 
 const validations = [
   check("userName")
     .notEmpty()
-    .withMessage("Este campo es obligatorio.")
+    .withMessage("Debes poner tu nombre completo.")
+    // .bail()
+    // .isAlpha({locale:"es-ES", options: " -"}
+    // .withMessage("El nombre no puede contener números.")
     .bail()
-    .isLength({ min: 2 })
-    .withMessage("Debe tener al menos 2 caracteres."),
+    .isLength({ min: 9 })
+    .withMessage("Debe ser un nombre válido."),
   check("email")
     .notEmpty()
-    .withMessage("Este campo es obligatorio.")
+    .withMessage("Debes poner tu correo.")
     .bail()
     .isEmail()
     .withMessage("Debes escribir un formato de correo válido."),
+  check("birthday")
+    .notEmpty()
+    .withMessage("Debes poner tu fecha de nacimiento."),
   check("userPassword")
     .notEmpty()
-    .withMessage("Este campo es obligatorio.")
+    .withMessage("Debes poner una contraseña.")
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("Tiene que tener un mínimo de 8 caracteres.")
     .bail(),
-  // .isLength({ min: 8 })
-  // .withMessage("Tiene que tener un mínimo de 8 caracteres.")
-  // .bail(),
-  // check("userImage").custom((value, { req }) => {
-  //   const file = req.file;
-  //   const acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
-  //   //const fileExtension = path.extname(file.originalname);
-  //   if (!file) {
-  //     throw new Error("Debes subir una imagen");
-  //   } else {
-  //     const fileExtension = path.extname(file.originalname);
-  //     if (!acceptedExtensions.includes(fileExtension)) {
-  //       throw new Error(
-  //         `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-  //           ", "
-  //         )}`
-  //       );
-  //     }
-  //   }
-  //   return true;
-  // }),
+  check("userImage").custom((value, { req }) => {
+    const file = req.file;
+    const acceptedExtensions = [".jpg", ".jpeg", ".gif", ".png"];
+    if (!file) {
+      throw new Error("Debes subir una imagen");
+    } else {
+      const fileExtension = path.extname(file.originalname);
+      if (!acceptedExtensions.includes(fileExtension)) {
+        throw new Error(
+          `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
+            ", "
+          )}`
+        );
+      }
+    }
+    return true;
+  }),
 ];
 
 const userControllers = require("../controllers/userControllers");
@@ -60,7 +66,7 @@ const userControllers = require("../controllers/userControllers");
 // Carrito?
 router.get("/cart", userControllers.cart);
 
-// Formulario para ingresar a una cuenta ya registrada
+// Frmulario para ingresar a una cuenta ya registrada
 
 router.get("/login", userControllers.login);
 router.post("/login", userControllers.userlogin);
@@ -68,11 +74,6 @@ router.post("/login", userControllers.userlogin);
 // Formulario de registrarse, nuevo usuario y procesar el registro
 
 router.get("/register", userControllers.register);
-router.post(
-  "/register",
-  upload.single("userImage"),
-  validations,
-  userControllers.userRegister
-);
+router.post("/register", upload.single('userImage'), validations, userControllers.userRegister);
 
 module.exports = router;
