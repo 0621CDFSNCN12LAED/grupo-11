@@ -3,6 +3,10 @@ const router = express.Router();
 
 const mainControllers = require("../controllers/mainControllers");
 
+//API
+const apiRouter = require("./api/index");
+router.use("/api", apiRouter);
+
 router.get("/associate", mainControllers.associate);
 
 router.get("/", mainControllers.home);
