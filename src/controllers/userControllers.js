@@ -37,7 +37,7 @@ const userControllers = {
     res.render("user/register");
   },
 
-  userProfile: async (req, res) => {
+  userRegister: async (req, res) => {
    // Proceso para almacenar nueva cuenta
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {

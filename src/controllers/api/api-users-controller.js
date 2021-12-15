@@ -1,18 +1,18 @@
-const { Users } = require("../../../database/models");
+const { User } = require("../../database/models");
 const { findByEmail } = require("../../services/userService");
 
 
 const usersApiController = {
   list: async (req, res) => {
-    const usersList = await Users.findAll({
+    const usersList = await User.findAll({
             order: [[
                 "id", "ASC"
-            ]], 
+            ]],
             offset: 0,
             limit: 2
         });
-    const users = usersList.map((user) => { 
-            return { 
+    const users = usersList.map((user) => {
+            return {
                 id: user.id,
                 name: user.userName,
                 email: user.email,
@@ -24,6 +24,6 @@ const usersApiController = {
             users
         })
     },
-
+}
 
     module.exports = usersApiController;
