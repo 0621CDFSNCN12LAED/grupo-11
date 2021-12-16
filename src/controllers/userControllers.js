@@ -74,7 +74,7 @@ const userControllers = {
     // Editar un perfil profesional
     const user = await db.User.findByPk(req.session.usuarioLogueado.id)
 
-    await db.professional.update(
+    await db.User.update(
       {
         userName: req.body.userName,
         birthday: req.body.birthday,
@@ -84,14 +84,21 @@ const userControllers = {
 
       },
       {
-        where: { id: req.session.usuarioLogueado.id},
+        where: { id: req.params.id},
       }
     );
-    res.redirect("/service/professionals");
+    res.redirect("/user/profile/" + req.params.id);
   },
   userProfile: async (req,res) => {
     const user = await db.User.findByPk(req.session.usuarioLogueado.id)
-    res.render("user/profile", { user})
+    res.render("user/profile", { user })
+  },
+  userDestroy: async (req, res) => {
+    // Borrar perfil profesional
+    await db.User.destroy({
+      where: { id: req.session.usuarioLogueado.id},
+    });
+    res.redirect("/");
   },
 };
 
