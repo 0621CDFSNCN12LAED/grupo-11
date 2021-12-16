@@ -80,4 +80,6 @@ router.put("/edit/:id", upload.single('userImage'), userControllers.userUpdate);
 
 router.get("/profile/:id", userControllers.userProfile);
 
+router.delete("/profile/:id", userControllers.userDestroy);
+
 module.exports = router;
