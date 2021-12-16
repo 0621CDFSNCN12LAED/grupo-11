@@ -76,8 +76,8 @@ router.get("/register", userControllers.register);
 router.post("/register", upload.single('userImage'), validations, userControllers.userRegister);
 
 router.get("/edit/:id", userControllers.userEdit);
-router.put("/:id", userControllers.userUpdate);
+router.put("/edit/:id", upload.single('userImage'), userControllers.userUpdate);
 
-router.get("/detail/:id", userControllers.userProfile);
+router.get("/profile/:id", userControllers.userProfile);
 
 module.exports = router;

@@ -8,7 +8,7 @@
     <!-- Header -->
     <%- include("../partials/header") %>
     <!-- Main -->
-    <form action="/service/<%= user.id %>?_method=PUT" method="POST"></form>
+    <form action="/user/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
     <div class="form-input">
       <label class="main-label" for="userName">Nombre y Apellido</label>
@@ -17,7 +17,7 @@
 
     <div class="form-input">
       <label class="main-label" for="birthday">Fecha de nacimiento</label>
-      <input id="birthday" type="text" name="birthday" value="<%= profesxsionaxl.birthday %>"/>
+      <input id="birthday" type="date" name="birthday" value="<%= user.birthday %>"/>
     </div>
 
     <div class="form-input">
@@ -28,13 +28,13 @@
 
     <div class="form-input">
       <label class="main-label" for="userImage">Foto de Perfil</label>
-      <input id="userImage" type="file" name="userImage" value="/img/profile/<%= user.userImage %>"/>
-      <img src="/img/profile/<%= user.userImage %>"width="25%" />
+      <input id="userImage" type="file" name="userImage">
+      <img src="/img/userImage/<%= user.userImage %>"width="25%" />
     </div>
 
     <div class="form-input">
       <label class="main-label" for="userPassword">Contraseña</label>
-      <input id="userPassword" type="password" name="userPassword" value="<%= user.userPassword %>"/>
+      <input id="userPassword" type="password" name="userPassword"/>
     </div>
 
     <button type="submit">Guardar ediciones</button>

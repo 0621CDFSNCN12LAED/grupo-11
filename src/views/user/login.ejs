@@ -10,15 +10,16 @@
     <!-- Main -->
     <main class="padding-16">
       <h1>Ingresa a tu cuenta</h1>
-      <form method="POST">
+      <form action="/user/login" method="POST">
+
         <div class="form-input">
           <label class="main-label" for="email">Correo electronico</label>
           <input id="email" type="email" name="email" />
         </div>
 
         <div class="form-input">
-          <label class="main-label" for="password">Contraseña</label>
-          <input id="password" type="password" name="password" />
+          <label class="main-label" for="userPassword">Contraseña</label>
+          <input id="userPassword" type="password" name="userPassword" />
         </div>
 
         <p><a href="#">Olvide mi contraseña</a></p>

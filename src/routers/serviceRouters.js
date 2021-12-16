@@ -26,7 +26,7 @@ router.post("/", upload.single("professionalImage"), serviceControllers.store);
 
 // Editar perfil del asociado
 router.get("/edit/:id", serviceControllers.edit);
-router.put("/:id", serviceControllers.update);
+router.put("/edit/:id", upload.single("professionalImage"), serviceControllers.update);
 
 // Borrar perfil de profesional asociado
 router.delete("/:id", serviceControllers.destroy);

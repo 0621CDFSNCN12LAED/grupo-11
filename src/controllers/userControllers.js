@@ -1,6 +1,5 @@
 const bcrypt = require("bcryptjs");
 const db = require("../database/models");
-const userService = require("../services/userService");
 const session = require("express-session"); // Lo usamos como app.use(session)en app.js hace falta tenerlo aqui requerido?
 const { validationResult, Result } = require("express-validator");
 
@@ -12,19 +11,26 @@ const userControllers = {
 
   login: (req, res) => {
     // Formulario para ingresar a una cuenta
+    console.log(req.session.usuarioLogueado);
     res.render("user/login");
   },
   userlogin: async (req, res) => {
     // Proceso para poder ingresar a una cuenta
-    const user = await userService.filterByEmail(req.body.email);
+    const user = await db.User.findOne({
+      where: {
+        email: req.body.email
+      }
+    })
 
     if (!user) {
       return res.redirect("/user/login");
     }
-    if (!bcrypt.compareSync(req.body.password, user.userPassword)) {
+
+    if (!bcrypt.compareSync(req.body.userPassword, user.userPassword)) {
       return res.redirect("/user/login");
     }
-    req.session.usuarioLogueado = user.id;
+
+    req.session.usuarioLogueado = user;
 
     if (req.body.recordame != undefined) {
       res.cookie("recordame", user.email);
@@ -59,32 +65,33 @@ const userControllers = {
 
     res.redirect("/user/login");
   },
-  userProfile: async (req,res) => {
-    const user = await db.User.findByPk(req.params.id)
-    res.render("user/profile", { user : user})
-  },
   userEdit: async (req, res) => {
     // Mostrar formulario para editar un perfil profesional
-    const user = await db.User.findByPk(req.params.id)
-    res.render("user/editProfile", { user : user});
+    const user = await db.User.findByPk(req.session.usuarioLogueado.id)
+    res.render("user/editProfile", { user });
   },
   userUpdate: async (req, res) => {
     // Editar un perfil profesional
+    const user = await db.User.findByPk(req.session.usuarioLogueado.id)
+
     await db.professional.update(
       {
-        professionalName: req.body.professionalName,
-        profession: req.body.profession,
-        professionalImage: req.body.professionalImage,
-        professionalLocation: req.body.professionalLocation,
-        professionlDescription: req.body.professionlDescription,
-        payMethod: req.body.payMethod,
-        celphone: req.body.celphone,
+        userName: req.body.userName,
+        birthday: req.body.birthday,
+        email: req.body.email,
+        userImage: req.file ? req.file.filename : user.userImage,
+        userPassword: req.body.userPassword,
+
       },
       {
-        where: { id: req.params.id },
+        where: { id: req.session.usuarioLogueado.id},
       }
     );
     res.redirect("/service/professionals");
+  },
+  userProfile: async (req,res) => {
+    const user = await db.User.findByPk(req.session.usuarioLogueado.id)
+    res.render("user/profile", { user})
   },
 };
 

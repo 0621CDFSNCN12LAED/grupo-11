@@ -61,5 +61,5 @@ app.use("/user", userRouters);
 /* Error 404 */
 
 app.use((req, res, next) => {
-  res.status(404).send("error no existe ese URL");
+  res.status(404).send("error no existe ese URL(404)");
 });

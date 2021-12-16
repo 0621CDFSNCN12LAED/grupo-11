@@ -45,6 +45,9 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.BIGINT,
         allowNull: false,
       },
+      id_membership: {
+        type: dataTypes.INTEGER(10),
+      },
     },
     {
       tableName: "professionals",

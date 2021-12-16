@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head") %>
+    <title>OLA</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include("./partials/header") %>
+    <!-- Main -->
+    <main>
+      <h1 class="centrado">Esta es nuestra lista de profesionales</h1>
+      <div id="main" class="flex">
+        <% for(let professional of professionals){ %> <%-
+        include("partials/professionals", {professional:professional}) %> <% }
+        %>
+      </div>
+    </main>
+    <!-- footer -->
+    <%- include("./partials/footer") %>
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <!-- Header -->
     <%- include("../partials/header") %>
     <!-- Main -->
-    <form action="/service/<%= professional.id %>?_method=PUT" method="POST">
+    <form action="/service/edit/<%= professional.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
     <div class="form-input">
       <label class="main-label" for="professionalName">Nombre y Apellido</label>
@@ -22,8 +22,8 @@
 
     <div class="form-input">
       <label class="main-label" for="professionalImage">Foto de Perfil</label>
-      <input id="professionalImage" type="file" name="professionalImage" value="/img/profile/<%= professional.professionalImage %>"/>
-      <img src="/img/profile/<%= professional.professionalImage %>"width="25%" />
+      <input id="professionalImage" type="file" name="professionalImage">
+      <img src="/img/professionalImage/<%= professional.professionalImage %>"width="25%" />
     </div>
 
     <div class="form-input">
@@ -33,7 +33,7 @@
 
     <div class="form-input">
       <label class="main-label" for="professionlDescription">Descripcion</label>
-      <textarea name="professionlDescription" id="professionlDescription"><%= professional.professionlDescription %></textarea>
+      <textarea name="professionlDescription" id="professionlDescription"><%= professional.professionalDescription %></textarea>
     </div>
 
     <div class="form-input">
