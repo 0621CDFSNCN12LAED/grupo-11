@@ -13,7 +13,7 @@ body {
 /* Header */
 
 .header-barra {
-  background-color: orange;
+  background-color: yellow;
   position: fixed;
   top: 0;
   justify-content: space-between;
@@ -75,7 +75,7 @@ body {
 }
 
 .profesional {
-  background-color: orange;
+  background-color: yellow;
 }
 
 .detalle {
@@ -106,4 +106,28 @@ header img {
 /* Errores en formulario de registro */
 div.errores {
   color: red;
+}
+
+/* ---------- ANIMACIONES ---------- */
+.animation-down{
+    opacity: 0;
+    animation-name: animation-down;
+    animation-duration: 6s;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes animation-down {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  20% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  100% {
+       transform: translateY(0);
+       opacity: 1;
+  }
 }

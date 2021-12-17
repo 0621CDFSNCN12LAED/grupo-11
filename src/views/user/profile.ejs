@@ -19,9 +19,9 @@
     />
     <p><%= user.userPassword %></p>
 
-    <a href="/user/edit/<%= user.id %>">Editar perfil</a>
+    <a href="/user/edit">Editar perfil</a>
 
-    <form action="/user/profile/<%= user.id %>?_method=DELETE" method="POST">
+    <form action="/user/profile?_method=DELETE" method="POST">
       <button type="submit">ELIMINAR</button>
     </form>
     <!-- footer -->

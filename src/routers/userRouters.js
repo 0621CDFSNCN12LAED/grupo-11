@@ -75,11 +75,11 @@ router.post("/login", userControllers.userlogin);
 router.get("/register", userControllers.register);
 router.post("/register", upload.single('userImage'), validations, userControllers.userRegister);
 
-router.get("/edit/:id", userControllers.userEdit);
-router.put("/edit/:id", upload.single('userImage'), userControllers.userUpdate);
+router.get("/edit", userControllers.userEdit);
+router.put("/edit", upload.single('userImage'), userControllers.userUpdate);
 
-router.get("/profile/:id", userControllers.userProfile);
+router.get("/profile", userControllers.userProfile);
 
-router.delete("/profile/:id", userControllers.userDestroy);
+router.delete("/profile", userControllers.userDestroy);
 
 module.exports = router;

@@ -35,7 +35,7 @@ const userControllers = {
     if (req.body.recordame != undefined) {
       res.cookie("recordame", user.email);
     }
-    return res.redirect("/");
+    return res.redirect("/user/profile");
   },
 
   register: (req, res) => {
@@ -73,6 +73,7 @@ const userControllers = {
   userUpdate: async (req, res) => {
     // Editar un perfil profesional
     const user = await db.User.findByPk(req.session.usuarioLogueado.id)
+    let passEncriptada = bcrypt.hashSync(req.body.userPassword, 10);
 
     await db.User.update(
       {
@@ -80,14 +81,14 @@ const userControllers = {
         birthday: req.body.birthday,
         email: req.body.email,
         userImage: req.file ? req.file.filename : user.userImage,
-        userPassword: req.body.userPassword,
+        userPassword: req.body.userPassword ? user.userPassword : passEncriptada,
 
       },
       {
-        where: { id: req.params.id},
+        where: { id: req.session.usuarioLogueado.id},
       }
     );
-    res.redirect("/user/profile/" + req.params.id);
+    res.redirect("/user/profile");
   },
   userProfile: async (req,res) => {
     const user = await db.User.findByPk(req.session.usuarioLogueado.id)
