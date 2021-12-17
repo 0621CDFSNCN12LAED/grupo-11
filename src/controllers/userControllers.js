@@ -103,6 +103,7 @@ const userControllers = {
   },
   logout: (req, res) => {
     // Borrar perfil profesional
+    res.clearCookie("recordame")
     req.session.destroy()
     res.redirect("/");
   },
