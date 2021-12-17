@@ -65,6 +65,7 @@ body {
   width: 85%;
   margin: 50px auto;
 }
+
 .contenedor-p a {
   text-decoration: 0;
 }
@@ -93,41 +94,46 @@ body {
   padding: 0;
 }
 
-/* Ignorar solo es para el logo no se vea, ya
-que es necesario poner otro */
+#main-nav img {
+  border-radius: 32px;
+  padding: 5px 2px;
+}
 
-header img {
-  opacity: 0;
+#main-nav p{
+  padding: 0px 4px;
 }
 
 .espacio-vacio {
   height: 60px;
 }
+
 /* Errores en formulario de registro */
 div.errores {
   color: red;
 }
 
 /* ---------- ANIMACIONES ---------- */
-.animation-down{
+.animation-down {
+  opacity: 0;
+  animation-name: animation-down;
+  animation-duration: 6s;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animation-down {
+  0% {
+    transform: translateY(-50px);
     opacity: 0;
-    animation-name: animation-down;
-    animation-duration: 6s;
-    animation-delay: 0.4s;
-    animation-fill-mode: forwards;
   }
 
-  @keyframes animation-down {
-    0% {
-      transform: translateY(-50px);
-      opacity: 0;
-  }
   20% {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
+
   100% {
-       transform: translateY(0);
-       opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }

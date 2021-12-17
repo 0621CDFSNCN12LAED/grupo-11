@@ -1,32 +1,33 @@
 <header>
   <div class="header-barra flex w-100 animation-down">
-    <img src="/img/Logo OLA_Mesa de trabajo 1.png" width="10%" height="60px" />
+    <!-- <img src="/img/Logo OLA_Mesa de trabajo 1.png" width="10%" height="60px" /> -->
     <div class="header-dos flex">
-      <i class="fas fa-shopping-cart burger-menu"></i>
+      <!-- <i class="fas fa-shopping-cart burger-menu"></i> -->
       <i class="fas fa-bars burger-menu"></i>
     </div>
 
     <nav id="main-nav" class="hide">
-      <div>
-        <!-- <ul>
-        <li>
-          <a>Otro lo Arregla</a></li>
-      </ul> -->
-      </div>
       <ul id="primer-ul">
         <li><a href="/">Home</a></li>
         <li><a href="/service">Servicios</a></li>
         <li><a href="/associate">Asociate</a></li>
         <li><a href="/service/professionals">Profesionales</a></li>
       </ul>
+      <% if (locals.isLogged) { %>
+        <img src="/img/userImage/<%= locals.userLogged.userImage %> " width="60px" height="60px">
+        <p><%= locals.userLogged.userName %> </p>
+        <p><a href="/user/profile">Perfil</a></p>
+        <p><a href="/user/logout">Cerrar sesion</a></p>
+      <% } else { %>
       <ul class="segundo-ul">
         <li><a href="/user/register">Registrarse</a></li>
         <li><a href="/user/login">Ingresar</a></li>
       </ul>
+      <% } %>
     </nav>
-    <div class="header-tres hide">
+    <!-- <div class="header-tres hide">
       <a href="/user/cart"><i class="fas fa-shopping-cart burger-menu"></i></a>
-    </div>
+    </div> -->
   </div>
 
   <!-- Input de busqueda aún no implementado. -->

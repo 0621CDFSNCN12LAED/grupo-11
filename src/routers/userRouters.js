@@ -104,4 +104,6 @@ router.get("/profile", userMiddleware ,userControllers.userProfile);
 
 router.delete("/profile",userControllers.userDestroy);
 
+router.get("/logout",userControllers.logout);
+
 module.exports = router;

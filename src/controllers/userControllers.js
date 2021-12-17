@@ -101,7 +101,7 @@ const userControllers = {
     });
     res.redirect("/");
   },
-  logout: async (req, res) => {
+  logout: (req, res) => {
     // Borrar perfil profesional
     req.session.destroy()
     res.redirect("/");
