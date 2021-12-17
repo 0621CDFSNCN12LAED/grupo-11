@@ -31,9 +31,9 @@ const serviceControllers = {
       cuilCuit: req.body.cuilCuit,
       dni: req.body.dni,
       profession: req.body.profession,
-      professionalImage: req.file.filename,
+      professionalImage: req.file ? req.file.filename : "professional-default.jpg",
       professionalLocation: req.body.professionalLocation,
-      professionalDescription: "Que onda estoy de prueba",
+      professionalDescription: req.body.professionalDescription,
       payMethod: req.body.payMethod,
       celphone: req.body.celphone,
     })

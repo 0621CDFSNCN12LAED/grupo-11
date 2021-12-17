@@ -33,7 +33,7 @@ const userControllers = {
     req.session.usuarioLogueado = user;
 
     if (req.body.recordame != undefined) {
-      res.cookie("recordame", user.email);
+      res.cookie("recordame", user.email, { maxAge: 120000});
     }
     return res.redirect("/user/profile");
   },
@@ -81,7 +81,7 @@ const userControllers = {
         birthday: req.body.birthday,
         email: req.body.email,
         userImage: req.file ? req.file.filename : user.userImage,
-        userPassword: req.body.userPassword ? user.userPassword : passEncriptada,
+        userPassword: req.body.userPassword == "" ? user.userPassword : passEncriptada,
 
       },
       {
@@ -99,6 +99,12 @@ const userControllers = {
     await db.User.destroy({
       where: { id: req.session.usuarioLogueado.id},
     });
+    res.redirect("/");
+  },
+  logout: (req, res) => {
+    // Borrar perfil profesional
+    res.clearCookie("recordame")
+    req.session.destroy()
     res.redirect("/");
   },
 };

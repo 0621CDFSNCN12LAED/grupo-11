@@ -1,8 +1,8 @@
 <header>
   <div class="header-barra flex w-100 animation-down">
-    <img src="/img/Logo OLA_Mesa de trabajo 1.png" width="10%" height="60px" />
+    <!-- <img src="/img/Logo OLA_Mesa de trabajo 1.png" width="10%" height="60px" /> -->
     <div class="header-dos flex">
-      <i class="fas fa-shopping-cart burger-menu"></i>
+      <!-- <i class="fas fa-shopping-cart burger-menu"></i> -->
       <i class="fas fa-bars burger-menu"></i>
     </div>
 
@@ -13,19 +13,26 @@
         <li><a href="/associate">Asociate</a></li>
         <li><a href="/service/professionals">Profesionales</a></li>
       </ul>
+      <% if (locals.isLogged) { %>
+        <img src="/img/userImage/<%= locals.userLogged.userImage %> " width="60px" height="60px">
+        <p><%= locals.userLogged.userName %> </p>
+        <p><a href="/user/profile">Perfil</a></p>
+        <p><a href="/user/logout">Cerrar sesion</a></p>
+      <% } else { %>
       <ul class="segundo-ul">
         <li><a href="/user/register">Registrarse</a></li>
         <li><a href="/user/login">Ingresar</a></li>
       </ul>
+      <% } %>
     </nav>
-    <div class="header-tres hide">
+    <!-- <div class="header-tres hide">
       <a href="/user/cart"><i class="fas fa-shopping-cart burger-menu"></i></a>
-    </div>
+    </div> -->
   </div>
 
   <!-- Input de busqueda aún no implementado. -->
 
-  <!-- <div id="search" class="padding-8 w-50 aling-self">
+  <!-- <div id="search" class="padding-8 w-50 aling-self nimation-down">
     <form class="flex no-wrap searchbar w-100">
       <input
         type="text"

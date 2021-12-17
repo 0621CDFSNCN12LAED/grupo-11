@@ -15,7 +15,7 @@ const upload = multer({ storage });
 
 // Validaciones
 
-const validations = [
+const registerValidations = [
   check("userName")
     .notEmpty()
     .withMessage("Debes poner tu nombre completo.")
@@ -60,26 +60,50 @@ const validations = [
   }),
 ];
 
+const loginValidations = [
+  check("email")
+    .notEmpty()
+    .withMessage("Debes poner tu correo.")
+    .bail()
+    .isEmail()
+    .withMessage("Debes escribir un formato de correo válido."),
+  check("userPassword")
+    .notEmpty()
+    .withMessage("Debes poner una contraseña.")
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("Tiene que tener un mínimo de 8 caracteres.")
+    .bail(),
+];
+
+
 const userControllers = require("../controllers/userControllers");
 
+const userMiddleware = require("../middlewares/userMiddleware")
+
+const guesthMiddleware = require("../middlewares/guestMiddleware")
+
+
 // Carrito?
-router.get("/cart", userControllers.cart);
+router.get("/cart", userMiddleware , userControllers.cart);
 
 // Frmulario para ingresar a una cuenta ya registrada
 
-router.get("/login", userControllers.login);
-router.post("/login", userControllers.userlogin);
+router.get("/login", guesthMiddleware,userControllers.login);
+router.post("/login", loginValidations , userControllers.userlogin);
 
 // Formulario de registrarse, nuevo usuario y procesar el registro
 
-router.get("/register", userControllers.register);
-router.post("/register", upload.single('userImage'), validations, userControllers.userRegister);
+router.get("/register", guesthMiddleware , userControllers.register);
+router.post("/register", upload.single('userImage'), registerValidations, userControllers.userRegister);
 
-router.get("/edit", userControllers.userEdit);
+router.get("/edit", userMiddleware ,userControllers.userEdit);
 router.put("/edit", upload.single('userImage'), userControllers.userUpdate);
 
-router.get("/profile", userControllers.userProfile);
+router.get("/profile", userMiddleware ,userControllers.userProfile);
 
-router.delete("/profile", userControllers.userDestroy);
+router.delete("/profile",userControllers.userDestroy);
+
+router.get("/logout",userControllers.logout);
 
 module.exports = router;

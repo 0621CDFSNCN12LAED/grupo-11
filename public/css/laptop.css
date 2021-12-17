@@ -59,8 +59,8 @@
   padding: 15px;
 }
 
-.profesional {
-}
+/* .profesional {
+} */
 
 /* Footer */
 
@@ -82,10 +82,10 @@
 /* Esto es el carrito pero luego se puede
 modificar */
 
-.header-tres {
+/* .header-tres {
   display: flex;
   width: 10%;
   align-items: center;
   justify-content: center;
   font-size: 22px;
-}
+} */

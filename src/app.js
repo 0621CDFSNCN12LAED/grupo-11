@@ -10,6 +10,8 @@ const cookieParser = require("cookie-parser");
 
 const recordameMiddleware = require("./middlewares/recordameMiddleware");
 
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+
 
 /* Abrir servidor */
 
@@ -33,6 +35,7 @@ app.use(
   })
 );
 
+app.use(userLoggedMiddleware)
 
 // Capturar datos y transformarlo a JSON
 app.use(express.json());
