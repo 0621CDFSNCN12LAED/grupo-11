@@ -7,6 +7,10 @@
     </div>
 
     <nav id="main-nav" class="hide">
+      <img src="/img/Logo OLA_negro-chico.jpg" width="5%" height="60px" />
+      <ul>
+        <p>OTRO LO ARREGLA</p>
+      </ul>
       <ul id="primer-ul">
         <li><a href="/">Home</a></li>
         <li><a href="/service">Servicios</a></li>
@@ -14,7 +18,7 @@
         <li><a href="/service/professionals">Profesionales</a></li>
       </ul>
       <% if (locals.isLogged) { %>
-        <img src="/img/userImage/<%= locals.userLogged.userImage %> " width="60px" height="60px">
+        <!-- <img src="/img/userImage/<%= locals.userLogged.userImage %> " width="60px" height="60px"> -->
         <p><%= locals.userLogged.userName %> </p>
         <p><a href="/user/profile">Perfil</a></p>
         <p><a href="/user/logout">Cerrar sesion</a></p>
