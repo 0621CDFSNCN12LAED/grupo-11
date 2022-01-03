@@ -32,6 +32,11 @@ CREATE TABLE `professionals` (
   CONSTRAINT `professionals_ibfk_1` FOREIGN KEY (`id_membership`) REFERENCES `memberships` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `category` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `professionalsProfession` varchar(255) NOT NULL,
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+
 DROP TABLE IF EXISTS users;
 CREATE TABLE `users` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
