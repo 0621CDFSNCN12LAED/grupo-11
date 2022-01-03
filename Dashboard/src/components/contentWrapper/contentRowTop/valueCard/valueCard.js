@@ -34,3 +34,9 @@ ValueCard.propTypes = {
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
+
+ValueCard.defaultProps = {
+  color: "primary",
+  value: "0",
+  title: "Tìtulo",
+};

@@ -28,7 +28,7 @@ export default function ContentWrapper() {
         </div>
         <ContentRowTop />
         <div class="row">
-          <ContentCard title="Último profesional registrado">
+          <ContentCard title="Último usuario registrado">
             <div class="text-center">
               <img
                 class="img-fluid px-3 px-sm-4 mt-3 mb-4"
