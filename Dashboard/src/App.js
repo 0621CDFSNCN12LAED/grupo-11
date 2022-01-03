@@ -1,6 +1,6 @@
-import "./assets/css/master.css";
+import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
+import "./assets/css/app.css";
 import SideBar from "./components/sideBar/sideBar";
-import ContentWrapper from "./components/contentWrapper/contentWrapper";
 
 function App() {
   return (

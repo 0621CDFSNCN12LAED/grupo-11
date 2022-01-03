@@ -5,7 +5,8 @@ export default function ContentCard(props) {
         <div class="card-header py-3">
           <h5 class="m-0 font-weight-bold text-gray-800">{props.title}</h5>
         </div>
-        <div class="card-body">{props.children}</div>
+        <div class="card-body"></div>
+        {props.children}
       </div>
     </div>
   );

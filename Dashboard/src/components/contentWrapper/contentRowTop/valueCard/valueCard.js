@@ -27,12 +27,14 @@ export default function ValueCard({ color, title, value, icon }) {
 }
 
 ValueCard.propTypes = {
-  color: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 ValueCard.defaultProps = {
   color: "primary",
+  value: "0",
+  title: "Tìtulo",
 };
