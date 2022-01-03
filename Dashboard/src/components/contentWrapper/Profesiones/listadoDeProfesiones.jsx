@@ -13,7 +13,7 @@ import React, { Component } from "react";
 
 const PROFESIONES_URL = "http://localhost:3000/api/professionals";
 
-export default class listadoDeProfesiones extends Component {
+export default class ListadoDeProfesiones extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -4,7 +4,7 @@ import TopBar from "./TopBar";
 import ContentRowTop from "./ContentRowTop/ContentRowTop";
 import ContentCard from "./ContentCard/contentCard";
 import OLA from "../../assets/img/banner 1-01.jpg";
-import listadoDeProfesiones from "./Listado de profesiones/listadoDeProfesiones";
+import ListadoDeProfesiones from "./Profesiones/listadoDeProfesiones.jsx";
 
 export default function ContentWrapper() {
   return (
@@ -40,7 +40,7 @@ export default function ContentWrapper() {
             </a>
           </ContentCard>
           <ContentCard title="Listado de profesiones">
-            <listadoDeProfesiones />
+            <ListadoDeProfesiones />
           </ContentCard>
         </div>
       </div>
