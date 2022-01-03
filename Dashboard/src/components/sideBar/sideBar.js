@@ -1,5 +1,6 @@
 import React from "react";
 import LogoOLA from "../../assets/img/OLA-Logo_Mesa de trabajo 1.png";
+import { Link } from "react-router-dom";
 
 function SideBar() {
   return (
@@ -7,22 +8,22 @@ function SideBar() {
       className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
       id="accordionSidebar"
     >
-      <a
+      <Link
         className="sidebar-brand d-flex align-items-center justify-content-center"
-        href="/"
+        to="/"
       >
         <div className="sidebar-brand-icon d-flex">
           <img className="w-100" src={LogoOLA} alt="OLA" />
         </div>
-      </a>
+      </Link>
 
       <hr className="sidebar-divider my-0" />
 
       <li className="nav-item active">
-        <a className="nav-link" href="/">
+        <Link className="nav-link" href="/">
           <i className="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard Otro Lo Arregla</span>
-        </a>
+        </Link>
       </li>
 
       <hr className="sidebar-divider" />
@@ -30,24 +31,24 @@ function SideBar() {
       <div className="sidebar-heading">Data</div>
 
       <li className="nav-item">
-        <a className="nav-link collapsed" href="/">
+        <Link className="nav-link collapsed" href="/">
           <i className="fas fa-fw fa-folder"></i>
           <span>Usuarios</span>
-        </a>
+        </Link>
       </li>
 
       <li className="nav-item">
-        <a className="nav-link" href="/">
+        <Link className="nav-link" href="/">
           <i className="fas fa-fw fa-chart-area"></i>
           <span>Profesionales</span>
-        </a>
+        </Link>
       </li>
 
       <li className="nav-item">
-        <a className="nav-link" href="/">
+        <Link className="nav-link" href="/">
           <i className="fas fa-fw fa-table"></i>
           <span>Categorías</span>
-        </a>
+        </Link>
       </li>
 
       <hr className="sidebar-divider d-none d-md-block" />
