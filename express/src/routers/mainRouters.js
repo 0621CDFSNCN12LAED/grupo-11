@@ -5,7 +5,7 @@ const mainControllers = require("../controllers/mainControllers");
 
 //API
 const apiRouter = require("./api/index");
-router.use("/api", apiRouter);
+router.use("/", apiRouter);
 
 router.get("/associate", mainControllers.associate);
 
