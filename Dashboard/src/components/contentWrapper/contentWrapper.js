@@ -4,17 +4,7 @@ import TopBar from "./TopBar";
 import ContentRowTop from "./ContentRowTop/ContentRowTop";
 import ContentCard from "./ContentCard/contentCard";
 import OLA from "../../assets/img/banner 1-01.jpg";
-
-const categories = [
-  "Plomería",
-  "Albañilería",
-  "Pintura",
-  "Limpieza",
-  "Electricidad",
-  "Gas",
-  "Legales",
-  "Pisos",
-];
+import listadoDeProfesiones from "./Listado de profesiones/listadoDeProfesiones";
 
 export default function ContentWrapper() {
   return (
@@ -50,17 +40,7 @@ export default function ContentWrapper() {
             </a>
           </ContentCard>
           <ContentCard title="Listado de profesiones">
-            <div class="row">
-              {categories.map((category) => {
-                return (
-                  <div class="col-lg-6 mb-4">
-                    <div class="card bg-dark text-white shadow">
-                      <div class="card-body">{category}</div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <listadoDeProfesiones />
           </ContentCard>
         </div>
       </div>
