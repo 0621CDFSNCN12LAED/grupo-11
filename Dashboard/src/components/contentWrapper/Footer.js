@@ -1,4 +1,6 @@
-export default function Footer() {
+import React from "react";
+
+function Footer() {
   return (
     <footer class="sticky-footer bg-white">
       <div class="container my-auto">
@@ -9,3 +11,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;

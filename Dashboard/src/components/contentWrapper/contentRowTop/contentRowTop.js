@@ -1,26 +1,29 @@
+import React from "react";
 import ValueCard from "./valueCard/valueCard";
 
-export default function ContentRowTop() {
+function ContentRowTop() {
   return (
-    <div class="row">
+    <div className="row">
       <ValueCard
-        title="Movies in Data Base"
+        title="Total de profesionales"
+        icon="fa-film"
+        color="primary"
+        value="450"
+      />
+      <ValueCard
+        title="Total de usuarios"
+        icon="fa-film"
+        color="primary"
+        value="16.599"
+      />
+      <ValueCard
+        title="Profesiones"
         icon="fa-film"
         color="primary"
         value="21"
       />
-      <ValueCard
-        title="Total awards"
-        icon="fa-award"
-        color="success"
-        value="79"
-      />
-      <ValueCard
-        title="Actors quantity"
-        icon="fa-user"
-        color="warning"
-        value="49"
-      />
     </div>
   );
 }
+
+export default ContentRowTop;

@@ -2,16 +2,13 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 
-
 const recordameMiddleware = require("./middlewares/recordameMiddleware");
 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-
 
 /* Abrir servidor */
 
@@ -35,13 +32,11 @@ app.use(
   })
 );
 
-app.use(userLoggedMiddleware)
+app.use(userLoggedMiddleware);
 
 // Capturar datos y transformarlo a JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-
 
 // Para usar PUT y DELETE en formularios
 app.use(methodOverride("_method"));
@@ -59,7 +54,6 @@ app.use("/", mainRouters);
 app.use("/service", serviceRouters);
 
 app.use("/user", userRouters);
-
 
 /* Error 404 */
 
